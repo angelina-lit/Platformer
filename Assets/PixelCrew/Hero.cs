@@ -4,21 +4,22 @@ public class Hero : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
-    private float _direction;
+    private Rigidbody2D _rigidbody;
+    private Vector2 _direction;
 
-    public void SetDirection(float direction)
+    private void Awake()
+    {
+        _rigidbody = GetComponent<Rigidbody2D>();
+    }
+
+    public void SetDirection(Vector2 direction)
     {
         _direction = direction;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (_direction != 0)
-        {
-            var delta = _direction * _speed * Time.deltaTime;
-            var newXPosition = transform.position.x + delta;
-            transform.position = new Vector3(newXPosition, transform.position.y, transform.position.z);
-        }
+        _rigidbody.velocity = new Vector2(_direction.x * _speed, _rigidbody.velocity.y);
     }
 
     public void SaySomething()

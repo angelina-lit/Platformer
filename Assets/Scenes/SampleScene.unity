@@ -538,13 +538,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192547961}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.492, y: -1.007, z: 11.337267}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.3292212, y: -1.2219329, z: -0.75230026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1681824201}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &194544357
 GameObject:
@@ -764,13 +764,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236492024}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.16, y: -1.007, z: 11.337267}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.9972211, y: -1.2219329, z: -0.75230026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1681824201}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &268157790
 GameObject:
@@ -1946,7 +1946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4893f99c1cdd0024db9e41e273a9b3c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
+  _speed: 3
 --- !u!114 &1541412264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2024,7 +2024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: faa678e3a8c08a546bdf785b5dc31797, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 8453425b24e61054b8c8e2ab1a7b6a90, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -2041,7 +2041,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1541412264}
         m_TargetAssemblyTypeName: HeroInputReader, Assembly-CSharp
-        m_MethodName: OnHorizontalMovement
+        m_MethodName: OnMovement
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2051,8 +2051,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 54ef8642-2c5c-4b61-8840-e0181e9f09f3
-    m_ActionName: Hero/Horizontal|Movement[/Keyboard/a,/Keyboard/b]
+    m_ActionId: ee3a3ac6-4b92-44e9-a640-dc96c2dcb5b3
+    m_ActionName: Hero/HorizontalMovement[/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1541412264}
@@ -2067,24 +2067,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: f055d84c-e101-404a-b7b9-077ced644092
-    m_ActionName: Hero/New action
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1541412264}
-        m_TargetAssemblyTypeName: HeroInputReader, Assembly-CSharp
-        m_MethodName: OnVerticalMovement
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: c4878053-5a26-47fa-afe5-600a9e7a485a
-    m_ActionName: Hero/New action
+    m_ActionId: 1e341900-6653-425b-aaad-11d024451f85
+    m_ActionName: Hero/SaySomething[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -2103,8 +2087,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.31323075, y: -0.051622152}
-  m_Size: {x: 0.7044883, y: 0.8635254}
+  m_Offset: {x: -0.31562352, y: -0.057138324}
+  m_Size: {x: 0.7144513, y: 0.86137986}
   m_Direction: 0
 --- !u!50 &1541412268
 Rigidbody2D:
@@ -2126,7 +2110,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1656842678
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,6 +2278,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 102716587}
   m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1681824200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1681824201}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1681824201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681824200}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.16277882, y: 0.21493287, z: 12.089567}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 192547963}
+  - {fileID: 236492026}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1736151652
 GameObject:
