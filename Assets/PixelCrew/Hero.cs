@@ -20,4 +20,9 @@ public class Hero : MonoBehaviour
             transform.position = new Vector3(newXPosition, transform.position.y, transform.position.z);
         }
     }
+
+    public void SaySomething()
+    {
+        Debug.Log(message: "Something!");
+    }
 }
