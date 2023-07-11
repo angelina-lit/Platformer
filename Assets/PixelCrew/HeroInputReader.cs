@@ -2,26 +2,22 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class HeroInputReader : MonoBehaviour
-{
+{ 
     [SerializeField] private Hero _hero;
 
-    public void OnHorizontalMovement(InputAction.CallbackContext context)
+    private void Update()
     {
-        var direction = context.ReadValue<Vector2>();
-        _hero.SetDirection(direction);
-    }
-
-    /*public void OnVerticalMovement(InputAction.CallbackContext context)
-    {
-        var directionY = context.ReadValue<float>();
-        _hero.SetDirectionY(directionY);
-    }*/
-
-    public void OnSaySomething(InputAction.CallbackContext context)
-    {
-        if (context.canceled)
+        if (Input.GetKey(KeyCode.A))
         {
-            _hero.SaySomething();
+            _hero.SetDirection(-1);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            _hero.SetDirection(1);
+        }
+        else
+        {
+            _hero.SetDirection(0);
         }
     }
 }
