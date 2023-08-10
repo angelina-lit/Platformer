@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2291591777489228872}
   - component: {fileID: 2291591777489228871}
   - component: {fileID: 2291591777489228873}
-  - component: {fileID: 2291591777489228875}
-  - component: {fileID: 2291591777489228874}
-  m_Layer: 7
+  - component: {fileID: 7657729963805762}
+  - component: {fileID: 8277083084471455025}
+  m_Layer: 9
   m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -126,7 +126,7 @@ PolygonCollider2D:
       - {x: 0.46875, y: -0.5}
       - {x: 0.5, y: -0.4375}
       - {x: 0.49411413, y: -0.18428224}
---- !u!114 &2291591777489228875
+--- !u!114 &7657729963805762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,17 +135,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2291591777489228870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c32f15e129a81ec45a22e744274dad85, type: 3}
+  m_Script: {fileID: 11500000, guid: f9c46877bd56f1045ab9a825f9f622f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2291591777489228874}
-        m_TargetAssemblyTypeName: ReloadLevelComponent, Assembly-CSharp
-        m_MethodName: Reload
-        m_Mode: 1
+      - m_Target: {fileID: 8277083084471455025}
+        m_TargetAssemblyTypeName: DamageComponent, Assembly-CSharp
+        m_MethodName: ApplyDamage
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -154,7 +154,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2291591777489228874
+--- !u!114 &8277083084471455025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,6 +163,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2291591777489228870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ecea274a4558cb49a708c0bcb0b7627, type: 3}
+  m_Script: {fileID: 11500000, guid: 48eb07d5698ba1542be744f6b6b60750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 1
