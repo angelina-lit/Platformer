@@ -6,6 +6,8 @@ public class Hero : MonoBehaviour
     [SerializeField] private float _jumpSpeed;
     [SerializeField] private float _damageJumpSpeed;
     [SerializeField] private LayerCheck _groundCheck;
+    [SerializeField] private float _intaractionRadius;
+    [SerializeField] private LayerMask _intaractionLayer;
 
     private Rigidbody2D _rigidbody;
     private Vector2 _direction;
@@ -13,6 +15,7 @@ public class Hero : MonoBehaviour
     private SpriteRenderer _sprite;
     private bool _isGrounded;
     private bool _allowDoubleJump;
+    private Collider2D[] _intaractionResult = new Collider2D[1];
 
     private static readonly int IsRunning = Animator.StringToHash("is-running");
     private static readonly int VerticalVelocity = Animator.StringToHash("vertical-velocity");
@@ -112,5 +115,20 @@ public class Hero : MonoBehaviour
     {
         _animator.SetTrigger(Hit);
         _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
+    }
+
+    public void Interact()
+    {
+        var size = Physics2D.OverlapCircleNonAlloc(transform.position, _intaractionRadius, _intaractionResult, _intaractionLayer);
+
+        for (int i = 0; i < size; i++)
+        {
+            var interactable = _intaractionResult[i].GetComponent<InteractableComponent>();
+
+            if (interactable != null)
+            {
+                interactable.Interact();
+            }
+        }
     }
 }
