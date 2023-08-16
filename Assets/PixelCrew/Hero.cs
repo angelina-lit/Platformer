@@ -1,3 +1,5 @@
+using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class Hero : MonoBehaviour
@@ -8,14 +10,17 @@ public class Hero : MonoBehaviour
     [SerializeField] private LayerCheck _groundCheck;
     [SerializeField] private float _intaractionRadius;
     [SerializeField] private LayerMask _intaractionLayer;
+    [SerializeField] private SpawnComponent _footStepParticle;
+    [SerializeField] private ParticleSystem _hitParticles;
+    [SerializeField] private int _coins;
 
     private Rigidbody2D _rigidbody;
     private Vector2 _direction;
     private Animator _animator;
-    private SpriteRenderer _sprite;
     private bool _isGrounded;
     private bool _allowDoubleJump;
     private Collider2D[] _intaractionResult = new Collider2D[1];
+    
 
     private static readonly int IsRunning = Animator.StringToHash("is-running");
     private static readonly int VerticalVelocity = Animator.StringToHash("vertical-velocity");
@@ -26,7 +31,6 @@ public class Hero : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        _sprite = GetComponent<SpriteRenderer>();
     }
 
     public void SetDirection(Vector2 direction)
@@ -93,11 +97,11 @@ public class Hero : MonoBehaviour
     {
         if (_direction.x > 0)
         {
-            _sprite.flipX = false;
+            transform.localScale = Vector3.one;
         }
         else if (_direction.x < 0)
         {
-            _sprite.flipX = true;
+            transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
@@ -111,10 +115,34 @@ public class Hero : MonoBehaviour
         Debug.Log(message: "Something!");
     }
 
+    public void AddCoins(int coinAmount)
+    {
+        _coins += coinAmount;
+        Debug.Log($"{coinAmount} coins added. Total coins: {_coins}");
+    }
+
     public void TakeDamage()
     {
         _animator.SetTrigger(Hit);
         _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpSpeed);
+
+        if (_coins > 0)
+        {
+            SpawnCoins();
+        }
+    }
+
+    public void SpawnCoins()
+    {
+        var numCoinsToDispose = Mathf.Min(_coins, 5);
+        _coins -= numCoinsToDispose;
+
+        var burst = _hitParticles.emission.GetBurst(0);
+        burst.count = numCoinsToDispose;
+        _hitParticles.emission.SetBurst(0, burst);
+
+        _hitParticles.gameObject.SetActive(true);
+        _hitParticles.Play();
     }
 
     public void Interact()
@@ -130,5 +158,10 @@ public class Hero : MonoBehaviour
                 interactable.Interact();
             }
         }
+    }
+
+    public void SpawnFootDust()
+    {
+        _footStepParticle.Spawn();
     }
 }

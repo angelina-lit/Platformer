@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4456580816308563198}
   - component: {fileID: 4456580816308563139}
   - component: {fileID: 4456580816308563138}
+  - component: {fileID: 8692697616163371796}
   m_Layer: 0
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371158683508964679}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -145,6 +146,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8692697616163371796}
+        m_TargetAssemblyTypeName: AddCoinComponent, Assembly-CSharp
+        m_MethodName: AddCoins
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4456580816308563139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +193,19 @@ MonoBehaviour:
   _onComplete:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8692697616163371796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371158683508964679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c78a7b3eaa56a1142a99e05a15b21832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinAmount: 3
 --- !u!1 &4456580816192069674
 GameObject:
   m_ObjectHideFlags: 0
