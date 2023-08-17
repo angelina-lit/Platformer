@@ -98,29 +98,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5628d68a90653714db6b250ae6b8ebb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frameRate: 10
-  _loop: 0
-  _sprites:
-  - {fileID: 595518222, guid: 7a8caf96d6418d54e9e82785d4351cb7, type: 3}
-  - {fileID: -900232372, guid: 2715b50a348f9ed46acd609c9edc5ee7, type: 3}
-  - {fileID: -1584966093, guid: 3029a07e7e5c5d04eb46c66e11bd98a9, type: 3}
-  - {fileID: -1825402225, guid: dcc423502dabc5d46a162087b3c7edbc, type: 3}
-  - {fileID: -24322131, guid: ca21264e4f6224547a5bd566ea6d1552, type: 3}
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1863646255792879580}
-        m_TargetAssemblyTypeName: DestroyObjectComponent, Assembly-CSharp
-        m_MethodName: DestroyObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _framerate: 10
+  _clips:
+  - _name: footSteps
+    _sprites:
+    - {fileID: 595518222, guid: 7a8caf96d6418d54e9e82785d4351cb7, type: 3}
+    - {fileID: -900232372, guid: 2715b50a348f9ed46acd609c9edc5ee7, type: 3}
+    - {fileID: -1584966093, guid: 3029a07e7e5c5d04eb46c66e11bd98a9, type: 3}
+    - {fileID: -1825402225, guid: dcc423502dabc5d46a162087b3c7edbc, type: 3}
+    - {fileID: -24322131, guid: ca21264e4f6224547a5bd566ea6d1552, type: 3}
+    _loop: 0
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1863646255792879580}
+          m_TargetAssemblyTypeName: DestroyObjectComponent, Assembly-CSharp
+          m_MethodName: DestroyObject
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1863646255792879580
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5863421165642198705}
   - component: {fileID: 5863421165642198711}
   - component: {fileID: 5863421165642198708}
+  - component: {fileID: 1541412271}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -31,7 +32,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5863421165642198719}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4, y: -0.6, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -128,6 +129,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   _footStepParticle: {fileID: 5863421165662701829}
+  _jumpParticle: {fileID: 0}
   _hitParticles: {fileID: 5863421167410570742}
   _coins: 0
 --- !u!114 &5863421165642198704
@@ -278,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93afac29cdb1de44793b1da3ddcd5110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 30
+  _health: 10
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -294,10 +296,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _onHeal:
+    m_PersistentCalls:
+      m_Calls: []
   _onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1541412271}
         m_TargetAssemblyTypeName: ReloadLevelComponent, Assembly-CSharp
         m_MethodName: Reload
         m_Mode: 1
@@ -309,6 +314,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1541412271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5863421165642198719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ecea274a4558cb49a708c0bcb0b7627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5863421165662701831
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +449,7 @@ GameObject:
   - component: {fileID: 5863421167410570742}
   - component: {fileID: 5863421167410570737}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: CoinParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

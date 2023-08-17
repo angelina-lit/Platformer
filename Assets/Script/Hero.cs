@@ -11,6 +11,7 @@ public class Hero : MonoBehaviour
     [SerializeField] private float _intaractionRadius;
     [SerializeField] private LayerMask _intaractionLayer;
     [SerializeField] private SpawnComponent _footStepParticle;
+    [SerializeField] private SpawnComponent _jumpParticle;
     [SerializeField] private ParticleSystem _hitParticles;
     [SerializeField] private int _coins;
 
@@ -20,7 +21,7 @@ public class Hero : MonoBehaviour
     private bool _isGrounded;
     private bool _allowDoubleJump;
     private Collider2D[] _intaractionResult = new Collider2D[1];
-    
+
 
     private static readonly int IsRunning = Animator.StringToHash("is-running");
     private static readonly int VerticalVelocity = Animator.StringToHash("vertical-velocity");
