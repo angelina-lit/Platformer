@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 595518222, guid: 7a8caf96d6418d54e9e82785d4351cb7, type: 3}
+  m_Sprite: {fileID: 1729575241, guid: f2873600457000642809510fcecc2c74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,11 +102,11 @@ MonoBehaviour:
   _clips:
   - _name: footSteps
     _sprites:
-    - {fileID: 595518222, guid: 7a8caf96d6418d54e9e82785d4351cb7, type: 3}
-    - {fileID: -900232372, guid: 2715b50a348f9ed46acd609c9edc5ee7, type: 3}
-    - {fileID: -1584966093, guid: 3029a07e7e5c5d04eb46c66e11bd98a9, type: 3}
-    - {fileID: -1825402225, guid: dcc423502dabc5d46a162087b3c7edbc, type: 3}
-    - {fileID: -24322131, guid: ca21264e4f6224547a5bd566ea6d1552, type: 3}
+    - {fileID: 1729575241, guid: f2873600457000642809510fcecc2c74, type: 3}
+    - {fileID: -1327371154, guid: 813f855d1a68ad140911c76f73e9b2cd, type: 3}
+    - {fileID: 783788909, guid: ef978926aca730a48849a0a220542525, type: 3}
+    - {fileID: 723559336, guid: 968373850ba350e4f9b1b57663aca4d8, type: 3}
+    - {fileID: 2057709523, guid: d2e3da4dace626c40b3719f53ba1b849, type: 3}
     _loop: 0
     _allowNextClip: 0
     _onComplete:

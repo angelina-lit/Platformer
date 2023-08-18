@@ -170,7 +170,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 26
+        width: 52
         height: 20
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -181,27 +181,6 @@ TextureImporter:
       bones: []
       spriteID: 9ee976b522015ad4192d1381c5e2d2d9
       internalID: 595518222
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fall(01)_1
-      rect:
-        serializedVersion: 2
-        x: 26
-        y: 0
-        width: 26
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f003e6871c0f424893fc37f6a2d2a86
-      internalID: 913331979
       vertices: []
       indices: 
       edges: []
@@ -218,7 +197,6 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Fall(01)_0: 595518222
-      Fall(01)_1: 913331979
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

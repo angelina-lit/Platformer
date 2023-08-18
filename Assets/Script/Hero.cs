@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class Hero : MonoBehaviour
 {
@@ -10,10 +11,14 @@ public class Hero : MonoBehaviour
     [SerializeField] private LayerCheck _groundCheck;
     [SerializeField] private float _intaractionRadius;
     [SerializeField] private LayerMask _intaractionLayer;
-    [SerializeField] private SpawnComponent _footStepParticle;
-    [SerializeField] private SpawnComponent _jumpParticle;
-    [SerializeField] private ParticleSystem _hitParticles;
     [SerializeField] private int _coins;
+
+    [Space]
+    [Header("Particles")]
+    [SerializeField] private SpawnComponent _footStepParticles;
+    [SerializeField] private SpawnComponent _jumpParticles;
+    //[SerializeField] private SpawnComponent _slamDownParticles;
+    [SerializeField] private ParticleSystem _hitParticles;
 
     private Rigidbody2D _rigidbody;
     private Vector2 _direction;
@@ -85,10 +90,12 @@ public class Hero : MonoBehaviour
         if (_isGrounded)
         {
             yVelocity += _jumpSpeed;
+            _jumpParticles.Spawn();
         }
         else if (_allowDoubleJump)
         {
             yVelocity = _jumpSpeed;
+            _jumpParticles.Spawn();
             _allowDoubleJump = false;
         }
         return yVelocity;
@@ -161,8 +168,26 @@ public class Hero : MonoBehaviour
         }
     }
 
+
+    /*private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.IsInLayer(_groundCheck._layer))
+        {
+            var contact = col.contacts[0];
+            if (contact.relativeVelocity.y > _slamDownVelocity)
+            {
+                SpawnFallParticles();
+            }
+        }
+    }
+
+    public void SpawnFallParticles()
+    {
+        _particles.Spawn("SlamDown");
+    }*/
+
     public void SpawnFootDust()
     {
-        _footStepParticle.Spawn();
+        _footStepParticles.Spawn();
     }
 }
