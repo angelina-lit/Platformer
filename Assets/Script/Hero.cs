@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEditor;
+using UnityEditor.Animations;
+using UnityEditor.iOS.Xcode;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 
@@ -8,10 +10,14 @@ public class Hero : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpSpeed;
     [SerializeField] private float _damageJumpSpeed;
-    [SerializeField] private LayerCheck _groundCheck;
     [SerializeField] private float _intaractionRadius;
-    [SerializeField] private LayerMask _intaractionLayer;
     [SerializeField] private int _coins;
+    [SerializeField] private int _damage;
+
+    [SerializeField] private LayerCheck _groundCheck;
+    [SerializeField] private LayerMask _intaractionLayer;
+    [SerializeField] private AnimatorController _armed;
+    [SerializeField] private AnimatorController _disarmed;
 
     [Space]
     [Header("Particles")]
@@ -19,19 +25,22 @@ public class Hero : MonoBehaviour
     [SerializeField] private SpawnComponent _jumpParticles;
     //[SerializeField] private SpawnComponent _slamDownParticles;
     [SerializeField] private ParticleSystem _hitParticles;
+    [SerializeField] private CheckCircleOverlap _attackRange;
 
     private Rigidbody2D _rigidbody;
     private Vector2 _direction;
     private Animator _animator;
-    private bool _isGrounded;
-    private bool _allowDoubleJump;
     private Collider2D[] _intaractionResult = new Collider2D[1];
 
+    private bool _isGrounded;
+    private bool _allowDoubleJump;
+    private bool _isArmed;
 
     private static readonly int IsRunning = Animator.StringToHash("is-running");
     private static readonly int VerticalVelocity = Animator.StringToHash("vertical-velocity");
     private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
     private static readonly int Hit = Animator.StringToHash("hit");
+    private static readonly int AttackKey = Animator.StringToHash("attack");
 
     private void Awake()
     {
@@ -189,5 +198,29 @@ public class Hero : MonoBehaviour
     public void SpawnFootDust()
     {
         _footStepParticles.Spawn();
+    }
+
+    public void Attack()
+    {
+        if (!_isArmed) return;
+
+        _animator.SetTrigger(AttackKey);
+    }
+
+    public void OnAttack()
+    {
+        var gos = _attackRange.GetObjecktsInRange();
+
+        foreach (var go in gos)
+        {
+            var hp = go.GetComponent<HealthComponent>();
+            if (hp != null && go.CompareTag("Enemy")) hp.ModifyHealth(-_damage);
+        }
+    }
+
+    public void ArmHero()
+    {
+        _isArmed = true;
+        _animator.runtimeAnimatorController = _armed;
     }
 }

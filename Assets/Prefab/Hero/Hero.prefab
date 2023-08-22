@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1134333212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1134333214}
+  - component: {fileID: 1134333213}
+  m_Layer: 0
+  m_Name: AttackRange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1134333214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134333212}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.45, y: -0.04, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5863421165642198716}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1134333213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134333212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b04dfe80df4c9c4e92457fad723d72f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 0.2
 --- !u!1 &2087572004690510622
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,7 +107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8676190092426640082
 Transform:
   m_ObjectHideFlags: 0
@@ -134,6 +179,7 @@ Transform:
   - {fileID: 5863421167410570736}
   - {fileID: 7437245167138823133}
   - {fileID: 8676190092426640082}
+  - {fileID: 1134333214}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -217,15 +263,19 @@ MonoBehaviour:
   _speed: 3
   _jumpSpeed: 10
   _damageJumpSpeed: 60
-  _groundCheck: {fileID: 5863421166635458759}
   _intaractionRadius: 0.5
+  _coins: 0
+  _damage: 1
+  _groundCheck: {fileID: 5863421166635458759}
   _intaractionLayer:
     serializedVersion: 2
     m_Bits: 1024
-  _footStepParticle: {fileID: 5863421165662701829}
-  _jumpParticle: {fileID: 0}
+  _armed: {fileID: 9100000, guid: a325463aec2ad2d4eadb5cb1aa609376, type: 2}
+  _disarmed: {fileID: 9100000, guid: ebce5ac75bf30854f8463baa7a0cebb3, type: 2}
+  _footStepParticles: {fileID: 5863421165662701829}
+  _jumpParticles: {fileID: 2211713037588041137}
   _hitParticles: {fileID: 5863421167410570742}
-  _coins: 0
+  _attackRange: {fileID: 1134333213}
 --- !u!114 &5863421165642198704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,6 +349,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8d31f99c-dae3-453f-b485-e39697a52971
     m_ActionName: Hero/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5863421165642198706}
+        m_TargetAssemblyTypeName: HeroInputReader, Assembly-CSharp
+        m_MethodName: OnAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2d92c333-3f2f-43a1-a60e-006a418cf5c7
+    m_ActionName: Hero/Attack[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -492,7 +558,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5863421166635458753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
