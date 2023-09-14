@@ -221,9 +221,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 1885134655
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1396667438, guid: 6274cbb77ba1c1941a54df58eabc4d30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -264,7 +264,6 @@ MonoBehaviour:
   _jumpSpeed: 10
   _damageJumpSpeed: 60
   _intaractionRadius: 0.5
-  _coins: 0
   _damage: 1
   _groundCheck: {fileID: 5863421166635458759}
   _intaractionLayer:
@@ -385,11 +384,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 6
   m_Material: {fileID: 6200000, guid: c5de5847cfb12824ba1e66e96e657578, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &5863421165642198705
 CapsuleCollider2D:
@@ -466,6 +465,21 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: ReloadLevelComponent, Assembly-CSharp
         m_MethodName: Reload
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5863421165642198717}
+        m_TargetAssemblyTypeName: Hero, Assembly-CSharp
+        m_MethodName: OnHealthChanged
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
