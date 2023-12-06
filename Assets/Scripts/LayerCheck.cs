@@ -9,7 +9,13 @@ public class LayerCheck : MonoBehaviour
 
     private Collider2D _collider;
 
-    public bool IsTouchingLayer => _isTouchingLayer;
+    //public bool IsTouchingLayer => _isTouchingLayer;
+
+    public bool IsTouchingLayer
+    {
+        get => _isTouchingLayer;
+        set => _isTouchingLayer = value;
+    } //??
 
     private void Awake()
     {
