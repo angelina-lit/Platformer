@@ -4,31 +4,26 @@ using UnityEngine;
 
 public class LayerCheck : MonoBehaviour
 {
-    [SerializeField] private LayerMask _layer;
-    [SerializeField] private bool _isTouchingLayer;
+	[SerializeField] private LayerMask _checkLayer;
+	[SerializeField] private bool _isTouchingLayer;
+	public bool IsTouchingLayer => _isTouchingLayer;
 
-    private Collider2D _collider;
+	private Collider2D _collider;
 
-    //public bool IsTouchingLayer => _isTouchingLayer;
+	public LayerMask CheckLayer { get => _checkLayer; }
 
-    public bool IsTouchingLayer
-    {
-        get => _isTouchingLayer;
-        set => _isTouchingLayer = value;
-    } //??
+	private void Awake()
+	{
+		_collider = GetComponent<Collider2D>();
+	}
 
-    private void Awake()
-    {
-        _collider = GetComponent<Collider2D>();
-    }
+	private void OnTriggerStay2D(Collider2D collision)
+	{
+		_isTouchingLayer = _collider.IsTouchingLayers(_checkLayer);
+	}
 
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        IsTouchingLayer = _collider.IsTouchingLayers(_layer);
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        IsTouchingLayer = _collider.IsTouchingLayers(_layer);
-    }
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		_isTouchingLayer = _collider.IsTouchingLayers(_checkLayer);
+	}
 }

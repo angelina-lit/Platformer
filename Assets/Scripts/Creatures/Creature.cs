@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Creature : MonoBehaviour
 {
     [Header("Params")]
     [SerializeField] private float _speed;
-    [SerializeField] protected float _jumpSpeed;
-    [SerializeField] private float _damageVelocity;
+	[SerializeField] protected float _jumpForce;
+	[SerializeField] private float _damageVelocity;
     [SerializeField] private int _damage;
+	
 
-    [Header("Checkers")]
+	[Header("Checkers")]
     [SerializeField] private LayerCheck _groundCheck;
     [SerializeField] private CheckCircleOverlap _attackRange;
     [SerializeField] protected SpawnListComponent _particles;
@@ -19,8 +21,8 @@ public class Creature : MonoBehaviour
     protected Vector2 _direction;
     protected Animator _animator;
 
-    protected bool _isGrounded;
-    //private bool _isJumping;
+	protected bool IsGrounded;
+    private bool _isJumping;
 
     private static readonly int IsRunning = Animator.StringToHash("is-running");
     private static readonly int VerticalVelocity = Animator.StringToHash("vertical-velocity");
@@ -39,61 +41,96 @@ public class Creature : MonoBehaviour
         _direction = direction;
     }
 
-    protected virtual void Update()
-    {
-        _isGrounded = _groundCheck.IsTouchingLayer;
-    }
+	protected virtual void Update()
+	{
+		IsGrounded = _groundCheck.IsTouchingLayer;
+	}
 
-    private void FixedUpdate()
+	private void FixedUpdate()
     {
 
         var xVelocity = _direction.x * _speed;
-        var yVelocity = CalculateYVelocity();
-        _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
+		var yVelocity = CalculateYVelocity();
+		_rigidbody.velocity = new Vector2(xVelocity, yVelocity);
 
         _animator.SetBool(IsRunning, _direction.x != 0);
         _animator.SetFloat(VerticalVelocity, _rigidbody.velocity.y);
-        _animator.SetBool(IsGroundKey, _isGrounded);
+        _animator.SetBool(IsGroundKey, IsGrounded);
 
         UpdateSpriteDirection();
     }
 
-    protected virtual float CalculateYVelocity()
-    {
-        var yVelocity = _rigidbody.velocity.y;
-        var isJumpPressing = _direction.y > 0;
+    //protected virtual float CalculateYVelocity()
+    //{
+    //    var yVelocity = _rigidbody.velocity.y;
+    //    var isJumpPressing = _direction.y > 0;
 
-        //if (_isGrounded) _isJumping = false;
+    //    //if (_isGrounded) _isJumping = false;
 
-        if (isJumpPressing)
-        {
-            //_isJumping = true;
+    //    if (isJumpPressing)
+    //    {
+    //        //_isJumping = true;
 
-            var isFalling = _rigidbody.velocity.y <= 0.001f;
-            if (!isFalling) return yVelocity;
+    //        var isFalling = _rigidbody.velocity.y <= 0.001f;
+    //        if (!isFalling) return yVelocity;
 
-            yVelocity = isFalling ? CalculateJumpVelocity(yVelocity) : yVelocity;
-        }
-        else if (_rigidbody.velocity.y > 0)
-        {
-            yVelocity *= 0.5f;
-        }
+    //        yVelocity = isFalling ? CalculateJumpVelocity(yVelocity) : yVelocity;
+    //    }
+    //    else if (_rigidbody.velocity.y > 0)
+    //    {
+    //        yVelocity *= 0.5f;
+    //    }
 
-        return yVelocity;
-    }
+    //    return yVelocity;
+    //}
 
-    protected virtual float CalculateJumpVelocity(float yVelocity)
-    {
-        if (_isGrounded)
-        {
-            yVelocity = _jumpSpeed; //yVelocity += _jumpSpeed;
-            _particles.Spawn("Jump");
-        }
+	protected virtual float CalculateYVelocity()
+	{
+		var yVelocity = _rigidbody.velocity.y;
+		var isJumpPressing = _direction.y > 0;
 
-        return yVelocity;
-    }
+		if (IsGrounded)
+		{
+			_isJumping = false;
+		}
+		if (isJumpPressing)
+		{
+			_isJumping = true;
 
-    private void UpdateSpriteDirection()
+			var isFalling = _rigidbody.velocity.y <= 0.001f;
+			yVelocity = isFalling ? CalculateJumpVelocity(yVelocity) : yVelocity;
+		}
+		else if (_rigidbody.velocity.y > 0.01 && _isJumping)
+		{
+			yVelocity *= 0.5f;
+		}
+		return yVelocity;
+	}
+
+	//protected virtual float CalculateJumpVelocity(float yVelocity)
+	//{
+	//    if (_isGrounded)
+	//    {
+	//        yVelocity = _jumpSpeed; //yVelocity += _jumpSpeed;
+	//        _particles.Spawn("Jump");
+	//    }
+
+	//    return yVelocity;
+	//}
+
+	protected virtual float CalculateJumpVelocity(float yVelocity)
+	{
+		if (IsGrounded)
+		{
+			yVelocity += _jumpForce;
+			//Sounds.Play("Jump");
+			//_particles.Spawn("Jump");
+		}
+
+		return yVelocity;
+	}
+
+	private void UpdateSpriteDirection()
     {
         if (_direction.x > 0)
         {

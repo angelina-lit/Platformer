@@ -107,7 +107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8676190092426640082
 Transform:
   m_ObjectHideFlags: 0
@@ -261,20 +261,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 3
-  _jumpSpeed: 10
-  _damageJumpSpeed: 60
-  _intaractionRadius: 0.5
+  _jumpForce: 15
+  _damageVelocity: 1
   _damage: 1
   _groundCheck: {fileID: 5863421166635458759}
+  _attackRange: {fileID: 1134333213}
+  _particles: {fileID: 0}
+  _intaractionRadius: 0.5
   _intaractionLayer:
     serializedVersion: 2
     m_Bits: 1024
   _armed: {fileID: 9100000, guid: a325463aec2ad2d4eadb5cb1aa609376, type: 2}
   _disarmed: {fileID: 9100000, guid: ebce5ac75bf30854f8463baa7a0cebb3, type: 2}
-  _footStepParticles: {fileID: 5863421165662701829}
-  _jumpParticles: {fileID: 2211713037588041137}
+  _doubleJumpForbidden: 0
   _hitParticles: {fileID: 5863421167410570742}
-  _attackRange: {fileID: 1134333213}
 --- !u!114 &5863421165642198704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,22 +316,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ee3a3ac6-4b92-44e9-a640-dc96c2dcb5b3
     m_ActionName: Hero/HorizontalMovement[/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5863421165642198706}
-        m_TargetAssemblyTypeName: HeroInputReader, Assembly-CSharp
-        m_MethodName: OnSaySomething
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 1e341900-6653-425b-aaad-11d024451f85
-    m_ActionName: Hero/SaySomething[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5863421165642198706}
@@ -592,9 +576,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.13}
+  m_Offset: {x: -0.015566677, y: -0.107617915}
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.29318458
 --- !u!114 &5863421166635458759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,10 +591,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fda0d4959751cf4982bbd8dc10fc2ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _groundLayer:
+  _checkLayer:
     serializedVersion: 2
     m_Bits: 512
-  isTouchingLayer: 0
+  _isTouchingLayer: 0
 --- !u!1 &5863421167410570739
 GameObject:
   m_ObjectHideFlags: 0
