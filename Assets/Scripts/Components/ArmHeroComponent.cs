@@ -1,16 +1,20 @@
+using Assets.Scripts.Creatures;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmHeroComponent : MonoBehaviour
+namespace Assets.Scripts.Components
 {
-    public void ArmHero(GameObject go)
+    public class ArmHeroComponent : MonoBehaviour
     {
-        var hero = go.GetComponent<Hero>();
-
-        if (hero != null)
+        public void ArmHero(GameObject go)
         {
-            hero.ArmHero();
+            var hero = go.GetComponent<Hero>();
+
+            if (hero != null)
+            {
+                hero.ArmHero();
+            }
         }
     }
 }

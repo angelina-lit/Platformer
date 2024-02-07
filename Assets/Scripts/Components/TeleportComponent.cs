@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TeleportComponent : MonoBehaviour
+namespace Assets.Scripts.Components
 {
-    [SerializeField] private Transform _destTransform;
-
-    public void Teleport(GameObject target)
+    public class TeleportComponent : MonoBehaviour
     {
-        target.transform.position = _destTransform.position;
+        [SerializeField] private Transform _destTransform;
+
+        public void Teleport(GameObject target)
+        {
+            target.transform.position = _destTransform.position;
+        }
     }
 }

@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class GameObjectExtensions
+namespace Assets.Scripts.Utils
 {
-    public static bool IsInLayer(this GameObject go, LayerMask layer)
+    public static class GameObjectExtensions
     {
-        return layer == (layer | 1 << go.layer);
+        public static bool IsInLayer(this GameObject go, LayerMask layer)
+        {
+            return layer == (layer | 1 << go.layer);
+        }
     }
 }

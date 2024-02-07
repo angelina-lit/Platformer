@@ -4,40 +4,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class HealthComponent: MonoBehaviour
+namespace Assets.Scripts.Components
 {
-    [SerializeField] private int _health;
-    [SerializeField] private UnityEvent _onDamage;
-    [SerializeField] private UnityEvent _onHeal;
-    [SerializeField] private UnityEvent _onDie;
-    [SerializeField] private HealthChangeEvent _onChange;
-
-    public void ModifyHealth(int healthDelta)
+    public class HealthComponent : MonoBehaviour
     {
-        _health += healthDelta;
+        [SerializeField] private int _health;
+        [SerializeField] private UnityEvent _onDamage;
+        [SerializeField] private UnityEvent _onHeal;
+        [SerializeField] private UnityEvent _onDie;
+        [SerializeField] private HealthChangeEvent _onChange;
 
-        _onChange?.Invoke(_health);
+        public void ModifyHealth(int healthDelta)
+        {
+            _health += healthDelta;
 
-        if (healthDelta < 0) _onDamage?.Invoke();
+            _onChange?.Invoke(_health);
 
-        if (healthDelta > 0) _onHeal?.Invoke();
+            if (healthDelta < 0) _onDamage?.Invoke();
 
-        if (_health <= 0 ) _onDie?.Invoke();
-    }
+            if (healthDelta > 0) _onHeal?.Invoke();
 
-    [ContextMenu("Update Health")]
-    private void UpdateHealth()
-    {
-        _onChange?.Invoke(_health);
-    }
+            if (_health <= 0) _onDie?.Invoke();
+        }
 
-    public void SetHealth(int health)
-    {
-        _health = health;
-    }
+        [ContextMenu("Update Health")]
+        private void UpdateHealth()
+        {
+            _onChange?.Invoke(_health);
+        }
 
-    [Serializable]
-    public class HealthChangeEvent : UnityEvent<int>
-    {
+        public void SetHealth(int health)
+        {
+            _health = health;
+        }
+
+        [Serializable]
+        public class HealthChangeEvent : UnityEvent<int>
+        {
+        }
     }
 }

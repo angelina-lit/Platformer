@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EnterTriggerComponent : MonoBehaviour
+namespace Assets.Scripts.Components
 {
-	[SerializeField] private string _tag;
-	[SerializeField] private EnterEvent _action;
-
-	private void OnTriggerEnter2D(Collider2D other)
+	public class EnterTriggerComponent : MonoBehaviour
 	{
-		if (other.gameObject.CompareTag(_tag))
+		[SerializeField] private string _tag;
+		[SerializeField] private EnterEvent _action;
+
+		private void OnTriggerEnter2D(Collider2D other)
 		{
-			_action?.Invoke(other.gameObject);
+			if (other.gameObject.CompareTag(_tag))
+			{
+				_action?.Invoke(other.gameObject);
+			}
 		}
 	}
 }

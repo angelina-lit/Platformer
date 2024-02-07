@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1134333214}
   - component: {fileID: 1134333213}
-  m_Layer: 0
+  - component: {fileID: 2201787232466162383}
+  m_Layer: 6
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,6 +46,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _radius: 0.2
+  _mask:
+    serializedVersion: 2
+    m_Bits: 8119
+  _tags:
+  - Enemy
+  _onOverlap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2201787232466162383}
+        m_TargetAssemblyTypeName: ModifyHealthComponent, Assembly-CSharp
+        m_MethodName: Apply
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2201787232466162383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134333212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48eb07d5698ba1542be744f6b6b60750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hpDelta: -1
 --- !u!1 &2087572004690510622
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7437245167138823133}
   - component: {fileID: 2211713037588041137}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: JumpSpawnPotition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,6 +125,150 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7437245167138823133}
   _prefab: {fileID: 3228310012001004895, guid: 40da517ad8d606b45b9d08791535a638, type: 3}
+--- !u!1 &3693564861684761064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8519777565865928592}
+  - component: {fileID: 5785589681154525769}
+  - component: {fileID: 6898156279619373078}
+  m_Layer: 6
+  m_Name: InteractionCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8519777565865928592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693564861684761064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.2, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5863421165642198716}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5785589681154525769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693564861684761064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b04dfe80df4c9c4e92457fad723d72f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 0.6
+  _mask:
+    serializedVersion: 2
+    m_Bits: 1024
+  _tags:
+  - Interactable
+  _onOverlap:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6898156279619373078}
+        m_TargetAssemblyTypeName: Assets.Scripts.Components.DoInteractionComponent,
+          Assembly-CSharp
+        m_MethodName: DoInteraction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6898156279619373078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3693564861684761064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57289cf316aa08545aad7ac914229080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3969483256247497445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 687185931102198262}
+  - component: {fileID: 2383498437444048110}
+  - component: {fileID: 1565149468877921742}
+  m_Layer: 6
+  m_Name: WallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &687185931102198262
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3969483256247497445}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5863421165642198716}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &2383498437444048110
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3969483256247497445}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
+--- !u!114 &1565149468877921742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3969483256247497445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fda0d4959751cf4982bbd8dc10fc2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4096
+  _isTouchingLayer: 0
 --- !u!1 &5355905362566432552
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8676190092426640082}
   - component: {fileID: 8872195831724023761}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SlamDownSpawnPotition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +333,8 @@ GameObject:
   - component: {fileID: 5863421165642198711}
   - component: {fileID: 5863421165642198708}
   - component: {fileID: 1541412271}
-  m_Layer: 0
+  - component: {fileID: 4113701643076170925}
+  m_Layer: 6
   m_Name: Hero
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -180,6 +359,8 @@ Transform:
   - {fileID: 7437245167138823133}
   - {fileID: 8676190092426640082}
   - {fileID: 1134333214}
+  - {fileID: 687185931102198262}
+  - {fileID: 8519777565865928592}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -260,26 +441,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4893f99c1cdd0024db9e41e273a9b3c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
-  _jumpForce: 15
-  _damageVelocity: 20
+  _speed: 4
+  _jumpSpeed: 20
+  _damageVelocity: 15
   _damage: 1
-  _groundCheck: {fileID: 5863421166635458759}
-  _attackRange: {fileID: 1134333213}
-  _particles: {fileID: 0}
-  _intaractionRadius: 0.5
-  _slamDownVelocity: 15
-  _intaractionLayer:
-    serializedVersion: 2
-    m_Bits: 1024
   _groundLayer:
     serializedVersion: 2
     m_Bits: 512
+  _groundCheck: {fileID: 5863421166635458759}
+  _attackRange: {fileID: 1134333213}
+  _particles: {fileID: 4113701643076170925}
+  _intaractionCheck: {fileID: 5785589681154525769}
+  _wallCheck: {fileID: 1565149468877921742}
+  _slamDownVelocity: 20
+  _intaractionRadius: 0.5
   _armed: {fileID: 9100000, guid: a325463aec2ad2d4eadb5cb1aa609376, type: 2}
   _disarmed: {fileID: 9100000, guid: ebce5ac75bf30854f8463baa7a0cebb3, type: 2}
-  _doubleJumpForbidden: 0
   _hitParticles: {fileID: 5863421167410570742}
-  _slamDownParticles: {fileID: 8872195831724023761}
 --- !u!114 &5863421165642198704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -489,6 +667,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ecea274a4558cb49a708c0bcb0b7627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4113701643076170925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5863421165642198719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2528a09429afa84ba6bdd0635fa5703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawners:
+  - Id: Run
+    Component: {fileID: 5863421165662701829}
+  - Id: Jump
+    Component: {fileID: 2211713037588041137}
+  - Id: SlamDown
+    Component: {fileID: 8872195831724023761}
 --- !u!1 &5863421165662701831
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,7 +696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5863421165662701828}
   - component: {fileID: 5863421165662701829}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FootStepPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -546,7 +743,7 @@ GameObject:
   - component: {fileID: 5863421166635458758}
   - component: {fileID: 5863421166635458756}
   - component: {fileID: 5863421166635458759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +758,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5863421166635458753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -581,9 +778,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015566677, y: -0.107617915}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.29318458
+  m_Radius: 0.3
 --- !u!114 &5863421166635458759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,7 +793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fda0d4959751cf4982bbd8dc10fc2ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkLayer:
+  _layer:
     serializedVersion: 2
     m_Bits: 512
   _isTouchingLayer: 0
@@ -611,7 +808,7 @@ GameObject:
   - component: {fileID: 5863421167410570736}
   - component: {fileID: 5863421167410570742}
   - component: {fileID: 5863421167410570737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CoinParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

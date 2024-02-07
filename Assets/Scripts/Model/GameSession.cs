@@ -2,31 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameSession : MonoBehaviour
+namespace Assets.Scripts.Model
 {
-    [SerializeField] private PlayerData _data;
-    public PlayerData Data => _data;
-
-    private void Awake()
+    public class GameSession : MonoBehaviour
     {
-        if (IsSessionExit())
-        {
-            DestroyImmediate(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(this);
-        }
-    }
+        [SerializeField] private PlayerData _data;
+        public PlayerData Data => _data;
 
-    private bool IsSessionExit()
-    {
-        var sessions = FindObjectsOfType<GameSession>();
-        foreach (var gameSession in sessions)
+        private void Awake()
         {
-            if (gameSession != this) 
-                return true;
+            if (IsSessionExit())
+            {
+                DestroyImmediate(gameObject);
+            }
+            else
+            {
+                DontDestroyOnLoad(this);
+            }
         }
-        return false;
+
+        private bool IsSessionExit()
+        {
+            var sessions = FindObjectsOfType<GameSession>();
+            foreach (var gameSession in sessions)
+            {
+                if (gameSession != this)
+                    return true;
+            }
+            return false;
+        }
     }
 }

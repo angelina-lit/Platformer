@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ExitLevelComponent : MonoBehaviour
+namespace Assets.Scripts.Components
 {
-    [SerializeField] private string _sceneName;
-
-    public void Exit()
+    public class ExitLevelComponent : MonoBehaviour
     {
-        SceneManager.LoadScene(_sceneName);
+        [SerializeField] private string _sceneName;
+
+        public void Exit()
+        {
+            SceneManager.LoadScene(_sceneName);
+        }
     }
 }

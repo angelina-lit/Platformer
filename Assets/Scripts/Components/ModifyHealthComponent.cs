@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ModifyHealthComponent : MonoBehaviour
+namespace Assets.Scripts.Components
 {
-    [SerializeField] private int _hpDelta;
-
-    public void Apply(GameObject target)
+    public class ModifyHealthComponent : MonoBehaviour
     {
-        var healthComponent = target.GetComponent<HealthComponent>();
-        if (healthComponent != null)
-            healthComponent.ModifyHealth(_hpDelta);
+        [SerializeField] private int _hpDelta;
+
+        public void Apply(GameObject target)
+        {
+            var healthComponent = target.GetComponent<HealthComponent>();
+            if (healthComponent != null)
+                healthComponent.ModifyHealth(_hpDelta);
+        }
     }
 }

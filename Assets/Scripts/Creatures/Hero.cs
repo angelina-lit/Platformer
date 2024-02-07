@@ -1,186 +1,160 @@
+using Assets.Scripts.Components;
+using Assets.Scripts.Model;
+using Assets.Scripts.Utils;
 using Unity.VisualScripting;
 using UnityEditor.Animations;
 using UnityEngine;
 
-public class Hero : Creature
+namespace Assets.Scripts.Creatures
 {
-	[SerializeField] private float _intaractionRadius;
-	[SerializeField] private float _slamDownVelocity;
-
-	[SerializeField] private LayerMask _intaractionLayer;
-	[SerializeField] private LayerMask _groundLayer;
-	[SerializeField] private AnimatorController _armed;
-	[SerializeField] private AnimatorController _disarmed;
-
-	[SerializeField] private bool _doubleJumpForbidden;
-
-	[Space]
-	[Header("Particles")]
-	[SerializeField] private ParticleSystem _hitParticles;
-	[SerializeField] private SpawnComponent _slamDownParticles;
-
-	private Collider2D[] _intaractionResult = new Collider2D[1];
-	private GameSession _session;
-
-	private bool _allowDoubleJump;
-	private bool _isOnWall;
-
-	protected override void Awake()
+	public class Hero : Creature
 	{
-		base.Awake();
-	}
+		[SerializeField] private CheckCircleOverlap _intaractionCheck;
+		[SerializeField] private LayerCheck _wallCheck;
 
-	private void Start()
-	{
-		_session = FindObjectOfType<GameSession>();
-		var health = GetComponent<HealthComponent>();
+		[SerializeField] private float _slamDownVelocity;
+		[SerializeField] private float _intaractionRadius;
 
-		health.SetHealth(_session.Data.Hp);
-		UpdateHeroWeapon();
-	}
+		[SerializeField] private AnimatorController _armed;
+		[SerializeField] private AnimatorController _disarmed;
 
-	public void OnHealthChanged(int currentHealth)
-	{
-		_session.Data.Hp = currentHealth;
-	}
+		[Space]
+		[Header("Particles")]
+		[SerializeField] private ParticleSystem _hitParticles;
 
-	protected override void Update()
-	{
-		base.Update();
-	}
+		private bool _allowDoubleJump;
+		private bool _isOnWall;
 
-	protected override float CalculateYVelocity()
-	{
-		var isJumpPressing = _direction.y > 0;
+		private GameSession _session;
+		private float _defaultGravityScale;
 
-		if (_isGrounded) _allowDoubleJump = true;
-
-		if (!isJumpPressing && _isOnWall)
+		protected override void Awake()
 		{
-			return 0f;
+			base.Awake();
+
+			_defaultGravityScale = Rigidbody.gravityScale;
 		}
 
-		return base.CalculateYVelocity();
-	}
-
-	//protected override float CalculateYVelocity()
-	//{
-	//	var isJumpPressing = _direction.y > 0;
-
-	//	if (IsGrounded && !_doubleJumpForbidden || _isOnWall)
-	//	{
-	//		_allowDoubleJump = true;
-	//	}
-
-	//	if (!isJumpPressing && _isOnWall)
-	//	{
-	//		return 0f;
-	//	}
-	//	return base.CalculateYVelocity();
-	//}
-
-	// protected override float CalculateJumpVelocity(float yVelocity)
-	// {
-	//     if (!_isGrounded || _allowDoubleJump)
-	//     {
-	//_particles.Spawn("Jump");
-	//         _allowDoubleJump = false;
-	//         return _jumpSpeed;
-	//     }
-
-	//     return base.CalculateJumpVelocity(yVelocity);
-	// }
-
-	protected override float CalculateJumpVelocity(float yVelocity)
-	{
-		if (!_isGrounded && _allowDoubleJump && !_doubleJumpForbidden && !_isOnWall)
+		private void Start()
 		{
-			//Sounds.Play("Jump");
-			//_particles.Spawn("Jump");
-			_allowDoubleJump = false;
+			_session = FindObjectOfType<GameSession>();
+			var health = GetComponent<HealthComponent>();
 
-			return _jumpForce;
+			health.SetHealth(_session.Data.Hp);
+			UpdateHeroWeapon();
 		}
 
-		return base.CalculateJumpVelocity(yVelocity);
-	}
-
-	public void AddCoins(int coinAmount)
-	{
-		_session.Data.Coins += coinAmount;
-		Debug.Log($"{coinAmount} coins added. Total coins: {_session.Data.Coins}");
-	}
-
-	public override void TakeDamage()
-	{
-		base.TakeDamage();
-
-		if (_session.Data.Coins > 0)
+		public void OnHealthChanged(int currentHealth)
 		{
-			SpawnCoins();
+			_session.Data.Hp = currentHealth;
 		}
-	}
 
-	public void SpawnCoins()
-	{
-		var numCoinsToDispose = Mathf.Min(_session.Data.Coins, 5);
-		_session.Data.Coins -= numCoinsToDispose;
-
-		var burst = _hitParticles.emission.GetBurst(0);
-		burst.count = numCoinsToDispose;
-		_hitParticles.emission.SetBurst(0, burst);
-
-		_hitParticles.gameObject.SetActive(true);
-		_hitParticles.Play();
-	}
-
-	public void Interact()
-	{
-		var size = Physics2D.OverlapCircleNonAlloc(transform.position, _intaractionRadius, _intaractionResult, _intaractionLayer);
-
-		for (int i = 0; i < size; i++)
+		protected override void Update()
 		{
-			var interactable = _intaractionResult[i].GetComponent<InteractableComponent>();
+			base.Update();
 
-			if (interactable != null)
+			if (_wallCheck.IsTouchingLayer && Direction.x == transform.localScale.x)
 			{
-				interactable.Interact();
+				_isOnWall = true;
+				Rigidbody.gravityScale = 0;
+			}
+			else
+			{
+				_isOnWall = false;
+				Rigidbody.gravityScale = _defaultGravityScale;
 			}
 		}
-	}
 
-	private void OnCollisionEnter2D(Collision2D other)
-	{
-		if (other.gameObject.IsInLayer(_groundLayer))
+		protected override float CalculateYVelocity()
 		{
-			var contact = other.contacts[0];
-			if (contact.relativeVelocity.y >= _slamDownVelocity)
+			var isJumpPressing = Direction.y > 0;
+
+			if (IsGrounded || _isOnWall) _allowDoubleJump = true;
+
+			if (!isJumpPressing && _isOnWall) return 0f;
+
+			return base.CalculateYVelocity();
+		}
+
+		protected override float CalculateJumpVelocity(float yVelocity)
+		{
+			if (!IsGrounded && _allowDoubleJump)
 			{
-				//_particles.Spawn("SlamDown");
+				_particles.Spawn("Jump");
+				_allowDoubleJump = false;
+				return _jumpSpeed;
 			}
 
-			if (contact.relativeVelocity.y >= _damageVelocity)
+			return base.CalculateJumpVelocity(yVelocity);
+		}
+
+		public void AddCoins(int coinAmount)
+		{
+			_session.Data.Coins += coinAmount;
+			Debug.Log($"{coinAmount} coins added. Total coins: {_session.Data.Coins}");
+		}
+
+		public override void TakeDamage()
+		{
+			base.TakeDamage();
+
+			if (_session.Data.Coins > 0)
 			{
-				GetComponent<HealthComponent>().ModifyHealth(-1);
+				SpawnCoins();
 			}
 		}
-	}
 
-	public override void Attack()
-	{
-		if (!_session.Data.IsArmed) return;
+		public void SpawnCoins()
+		{
+			var numCoinsToDispose = Mathf.Min(_session.Data.Coins, 5);
+			_session.Data.Coins -= numCoinsToDispose;
 
-		base.Attack();
-	}
+			var burst = _hitParticles.emission.GetBurst(0);
+			burst.count = numCoinsToDispose;
+			_hitParticles.emission.SetBurst(0, burst);
 
-	public void ArmHero()
-	{
-		_session.Data.IsArmed = true;
-		UpdateHeroWeapon();
-	}
+			_hitParticles.gameObject.SetActive(true);
+			_hitParticles.Play();
+		}
 
-	private void UpdateHeroWeapon()
-	{
-		_animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disarmed; //более короткая запись if|else
+		public void Interact()
+		{
+			_intaractionCheck.Check();
+		}
+
+		private void OnCollisionEnter2D(Collision2D other)
+		{
+			if (other.gameObject.IsInLayer(_groundLayer))
+			{
+				var contact = other.contacts[0];
+				if (contact.relativeVelocity.y >= _slamDownVelocity)
+				{
+					_particles.Spawn("SlamDown");
+				}
+
+				//if (contact.relativeVelocity.y >= _damageVelocity)
+				//{
+				//	GetComponent<HealthComponent>().ModifyHealth(-1);
+				//}
+			}
+		}
+
+		public override void Attack()
+		{
+			if (!_session.Data.IsArmed) return;
+
+			base.Attack();
+		}
+
+		public void ArmHero()
+		{
+			_session.Data.IsArmed = true;
+			UpdateHeroWeapon();
+		}
+
+		private void UpdateHeroWeapon()
+		{
+			Animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disarmed; //более короткая запись if|else
+		}
 	}
 }

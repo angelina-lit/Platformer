@@ -1,16 +1,20 @@
+using Assets.Scripts.Creatures;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class AddCoinComponent : MonoBehaviour
+namespace Assets.Scripts.Components
 {
-    [SerializeField] private int coinAmount;
-
-    public void AddCoins(GameObject target)
+    public class AddCoinComponent : MonoBehaviour
     {
-        var hero = target.GetComponent<Hero>();
-        if (hero != null)
-            hero.AddCoins(coinAmount);
+        [SerializeField] private int coinAmount;
+
+        public void AddCoins(GameObject target)
+        {
+            var hero = target.GetComponent<Hero>();
+            if (hero != null)
+                hero.AddCoins(coinAmount);
+        }
     }
 }
