@@ -223,7 +223,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1885134655
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -1396667438, guid: 6274cbb77ba1c1941a54df58eabc4d30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -262,19 +262,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3
   _jumpForce: 15
-  _damageVelocity: 1
+  _damageVelocity: 20
   _damage: 1
   _groundCheck: {fileID: 5863421166635458759}
   _attackRange: {fileID: 1134333213}
   _particles: {fileID: 0}
   _intaractionRadius: 0.5
+  _slamDownVelocity: 15
   _intaractionLayer:
     serializedVersion: 2
     m_Bits: 1024
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 512
   _armed: {fileID: 9100000, guid: a325463aec2ad2d4eadb5cb1aa609376, type: 2}
   _disarmed: {fileID: 9100000, guid: ebce5ac75bf30854f8463baa7a0cebb3, type: 2}
   _doubleJumpForbidden: 0
   _hitParticles: {fileID: 5863421167410570742}
+  _slamDownParticles: {fileID: 8872195831724023761}
 --- !u!114 &5863421165642198704
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -72,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1885134655
+  m_SortingLayer: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 595518222, guid: 7a8caf96d6418d54e9e82785d4351cb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5628d68a90653714db6b250ae6b8ebb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _framerate: 10
+  _frameRate: 10
   _clips:
-  - _name: footSteps
+  - _name: slamDown
     _sprites:
     - {fileID: 595518222, guid: 7a8caf96d6418d54e9e82785d4351cb7, type: 3}
     - {fileID: -900232372, guid: 2715b50a348f9ed46acd609c9edc5ee7, type: 3}

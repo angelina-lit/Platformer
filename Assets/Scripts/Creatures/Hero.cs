@@ -5,9 +5,10 @@ using UnityEngine;
 public class Hero : Creature
 {
 	[SerializeField] private float _intaractionRadius;
-	//[SerializeField] private int _damageVelocity; реализовать урон от падения (2.2.49 мин)
+	[SerializeField] private float _slamDownVelocity;
 
 	[SerializeField] private LayerMask _intaractionLayer;
+	[SerializeField] private LayerMask _groundLayer;
 	[SerializeField] private AnimatorController _armed;
 	[SerializeField] private AnimatorController _disarmed;
 
@@ -16,6 +17,7 @@ public class Hero : Creature
 	[Space]
 	[Header("Particles")]
 	[SerializeField] private ParticleSystem _hitParticles;
+	[SerializeField] private SpawnComponent _slamDownParticles;
 
 	private Collider2D[] _intaractionResult = new Collider2D[1];
 	private GameSession _session;
@@ -51,7 +53,7 @@ public class Hero : Creature
 	{
 		var isJumpPressing = _direction.y > 0;
 
-		if (IsGrounded) _allowDoubleJump = true;
+		if (_isGrounded) _allowDoubleJump = true;
 
 		if (!isJumpPressing && _isOnWall)
 		{
@@ -91,7 +93,7 @@ public class Hero : Creature
 
 	protected override float CalculateJumpVelocity(float yVelocity)
 	{
-		if (!IsGrounded && _allowDoubleJump && !_doubleJumpForbidden && !_isOnWall)
+		if (!_isGrounded && _allowDoubleJump && !_doubleJumpForbidden && !_isOnWall)
 		{
 			//Sounds.Play("Jump");
 			//_particles.Spawn("Jump");
@@ -147,18 +149,22 @@ public class Hero : Creature
 		}
 	}
 
+	private void OnCollisionEnter2D(Collision2D other)
+	{
+		if (other.gameObject.IsInLayer(_groundLayer))
+		{
+			var contact = other.contacts[0];
+			if (contact.relativeVelocity.y >= _slamDownVelocity)
+			{
+				//_particles.Spawn("SlamDown");
+			}
 
-	//private void OnCollisionEnter2D(Collision2D other)
-	//{
-	//	if (other.gameObject.IsInLayer(_groundLayer))
-	//	{
-	//		var contact = other.contacts[0];
-	//		if (contact.relativeVelocity.y >= _slamDownVelocity)
-	//		{
-	//			_particles.Spawn("SlamDown");
-	//		}
-	//	}
-	//}
+			if (contact.relativeVelocity.y >= _damageVelocity)
+			{
+				GetComponent<HealthComponent>().ModifyHealth(-1);
+			}
+		}
+	}
 
 	public override void Attack()
 	{

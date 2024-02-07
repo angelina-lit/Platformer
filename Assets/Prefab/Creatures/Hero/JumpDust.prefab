@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5628d68a90653714db6b250ae6b8ebb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _framerate: 10
+  _frameRate: 10
   _clips:
   - _name: jump
     _sprites:

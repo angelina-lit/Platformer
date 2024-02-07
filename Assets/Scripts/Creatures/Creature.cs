@@ -8,7 +8,7 @@ public class Creature : MonoBehaviour
     [Header("Params")]
     [SerializeField] private float _speed;
 	[SerializeField] protected float _jumpForce;
-	[SerializeField] private float _damageVelocity;
+	[SerializeField] protected float _damageVelocity;
     [SerializeField] private int _damage;
 	
 
@@ -21,7 +21,7 @@ public class Creature : MonoBehaviour
     protected Vector2 _direction;
     protected Animator _animator;
 
-	protected bool IsGrounded;
+	protected bool _isGrounded;
     private bool _isJumping;
 
     private static readonly int IsRunning = Animator.StringToHash("is-running");
@@ -43,7 +43,7 @@ public class Creature : MonoBehaviour
 
 	protected virtual void Update()
 	{
-		IsGrounded = _groundCheck.IsTouchingLayer;
+		_isGrounded = _groundCheck.IsTouchingLayer;
 	}
 
 	private void FixedUpdate()
@@ -55,7 +55,7 @@ public class Creature : MonoBehaviour
 
         _animator.SetBool(IsRunning, _direction.x != 0);
         _animator.SetFloat(VerticalVelocity, _rigidbody.velocity.y);
-        _animator.SetBool(IsGroundKey, IsGrounded);
+        _animator.SetBool(IsGroundKey, _isGrounded);
 
         UpdateSpriteDirection();
     }
@@ -89,7 +89,7 @@ public class Creature : MonoBehaviour
 		var yVelocity = _rigidbody.velocity.y;
 		var isJumpPressing = _direction.y > 0;
 
-		if (IsGrounded)
+		if (_isGrounded)
 		{
 			_isJumping = false;
 		}
@@ -120,7 +120,7 @@ public class Creature : MonoBehaviour
 
 	protected virtual float CalculateJumpVelocity(float yVelocity)
 	{
-		if (IsGrounded)
+		if (_isGrounded)
 		{
 			yVelocity += _jumpForce;
 			//Sounds.Play("Jump");

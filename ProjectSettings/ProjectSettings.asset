@@ -903,11 +903,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: b994450d-bff4-450b-b2c6-6b5b939cad3f
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: platformer
+  organizationId: unity_98e7a31396572ea9896e
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
