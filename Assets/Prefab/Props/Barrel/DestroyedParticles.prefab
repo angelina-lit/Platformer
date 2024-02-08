@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2673362308002664089}
   - component: {fileID: 3526032374337759075}
   - component: {fileID: 3033755460671245656}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 5_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 220596518360939325}
   - component: {fileID: 2844566437904051948}
   - component: {fileID: 6417365615096481417}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 2_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 8257334797202136002}
   - component: {fileID: 1589432240373814137}
   - component: {fileID: 6864555716137400236}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 4_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 1287241830155097406}
   - component: {fileID: 4976276396898154811}
   - component: {fileID: 432342021009558435}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: 3_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -557,7 +557,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1668102498865433970}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DestroyedParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

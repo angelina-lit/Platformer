@@ -11,7 +11,7 @@ namespace Assets.Scripts.Components
         public void Reload()
         {
             var session = FindObjectOfType<GameSession>();
-            DestroyImmediate(session);
+            Destroy(session);
 
             var scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
