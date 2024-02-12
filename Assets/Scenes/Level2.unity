@@ -1444,7 +1444,7 @@ MonoBehaviour:
   _data:
     Coins: 0
     Hp: 10
-    IsArmed: 0
+    IsArmed: 1
 --- !u!4 &1392148167
 Transform:
   m_ObjectHideFlags: 0
@@ -1773,18 +1773,6 @@ PrefabInstance:
     - target: {fileID: 8166870302858844077, guid: 5ff6a144cab8d6f4687f5e2b4521487c, type: 3}
       propertyPath: m_Name
       value: Sword
-      objectReference: {fileID: 0}
-    - target: {fileID: 8166870302858844081, guid: 5ff6a144cab8d6f4687f5e2b4521487c, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8166870302858844081, guid: 5ff6a144cab8d6f4687f5e2b4521487c, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8166870302858844081, guid: 5ff6a144cab8d6f4687f5e2b4521487c, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1885134655
       objectReference: {fileID: 0}
     - target: {fileID: 8166870302858844082, guid: 5ff6a144cab8d6f4687f5e2b4521487c, type: 3}
       propertyPath: m_RootOrder
@@ -3303,18 +3291,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5863421165642198707, guid: 8e883a84b250a52498fd1f7a18bf8ee7, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5863421165642198707, guid: 8e883a84b250a52498fd1f7a18bf8ee7, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5863421165642198707, guid: 8e883a84b250a52498fd1f7a18bf8ee7, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1885134655
-      objectReference: {fileID: 0}
     - target: {fileID: 5863421165642198716, guid: 8e883a84b250a52498fd1f7a18bf8ee7, type: 3}
       propertyPath: m_RootOrder
       value: 2

@@ -1,6 +1,7 @@
 using Assets.Scripts.Components;
 using Assets.Scripts.Model;
 using Assets.Scripts.Utils;
+using System;
 using Unity.VisualScripting;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -21,6 +22,8 @@ namespace Assets.Scripts.Creatures
 		[Space]
 		[Header("Particles")]
 		[SerializeField] private ParticleSystem _hitParticles;
+
+		private static readonly int ThrowKey = Animator.StringToHash("throw");
 
 		private bool _allowDoubleJump;
 		private bool _isOnWall;
@@ -155,6 +158,16 @@ namespace Assets.Scripts.Creatures
 		private void UpdateHeroWeapon()
 		{
 			Animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disarmed; //более короткая запись if|else
+		}
+
+		public void OnDoThrow()
+		{
+			_particles.Spawn("Throw");
+		}
+
+		public void Throw()
+		{
+			Animator.SetTrigger(ThrowKey);
 		}
 	}
 }
