@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 1439571919561094882}
-  _prefab: {fileID: 3228310012001004895, guid: 570de96b24566c642a12548b138a2a17, type: 3}
+  _prefab: {fileID: 3228310012001004895, guid: 74090815e19d7e149872092abee0c48a, type: 3}
 --- !u!1 &3693564861684761064
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,9 +843,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0041818023}
+  m_Offset: {x: 0, y: -0.015898377}
   serializedVersion: 2
-  m_Radius: 0.2958182
+  m_Radius: 0.3158984
 --- !u!114 &5863421166635458759
 MonoBehaviour:
   m_ObjectHideFlags: 0
