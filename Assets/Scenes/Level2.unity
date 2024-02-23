@@ -2017,6 +2017,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sharky
       objectReference: {fileID: 0}
+    - target: {fileID: 5863421165642198719, guid: 5cd223458c03ed949a446fa53fdfc879, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6757431709476272939, guid: 5cd223458c03ed949a446fa53fdfc879, type: 3}
       propertyPath: _points.Array.data[0]
       value: 
@@ -3262,7 +3266,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 8
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3573,10 +3577,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: -1404404350, guid: 07482f8d482881f41866f6d0484c1f1e, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -1404404350, guid: 07482f8d482881f41866f6d0484c1f1e, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 127
     m_Data:
