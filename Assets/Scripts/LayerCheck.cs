@@ -10,8 +10,6 @@ namespace Assets.Scripts
 
 		public bool IsTouchingLayer => _isTouchingLayer;
 
-		//public LayerMask CheckLayer { get => _layer; }
-
 		private void Awake()
 		{
 			_collider = GetComponent<Collider2D>();

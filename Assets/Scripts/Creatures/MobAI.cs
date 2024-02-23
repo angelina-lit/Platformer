@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Components;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -46,10 +47,18 @@ namespace Assets.Scripts.Creatures
 
 		private IEnumerator AgrToHero()
 		{
+			LookAtHero();
 			_particles.Spawn("Exclamation");
 			yield return new WaitForSeconds(_alarmDelay);
 
 			StartState(GoToHero());
+		}
+
+		private void LookAtHero()
+		{
+			var direction = GetDirectionToTarget();
+			_creature.SetDirection(Vector2.zero);
+			_creature.UpdateSpriteDirection(direction);
 		}
 
 		private IEnumerator GoToHero()
@@ -68,8 +77,11 @@ namespace Assets.Scripts.Creatures
 				yield return null;
 			}
 
+			_creature.SetDirection(Vector2.zero);
 			_particles.Spawn("MissHero");
 			yield return new WaitForSeconds(_missHeroCoolDown);
+
+			StartState(_patrol.DoPatrol());
 		}
 
 		private IEnumerator Attack()
@@ -85,9 +97,15 @@ namespace Assets.Scripts.Creatures
 
 		private void SetDirectionToTarget()
 		{
+			var direction = GetDirectionToTarget();
+			_creature.SetDirection(direction);
+		}
+
+		private Vector2 GetDirectionToTarget()
+		{
 			var direction = _target.transform.position - transform.position;
 			direction.y = 0;
-			_creature.SetDirection(direction.normalized);
+			return direction.normalized;
 		}
 
 		private void StartState(IEnumerator coroutine)
