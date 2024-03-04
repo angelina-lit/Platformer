@@ -489,6 +489,8 @@ MonoBehaviour:
   _wallCheck: {fileID: 1565149468877921742}
   _slamDownVelocity: 20
   _intaractionRadius: 0.5
+  _throwCooldown:
+    _value: 0.7
   _armed: {fileID: 9100000, guid: a325463aec2ad2d4eadb5cb1aa609376, type: 2}
   _disarmed: {fileID: 9100000, guid: ebce5ac75bf30854f8463baa7a0cebb3, type: 2}
   _hitParticles: {fileID: 5863421167410570742}

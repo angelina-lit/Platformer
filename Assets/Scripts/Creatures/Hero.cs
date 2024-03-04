@@ -16,6 +16,7 @@ namespace Assets.Scripts.Creatures
 		[SerializeField] private float _slamDownVelocity;
 		[SerializeField] private float _intaractionRadius;
 
+		[SerializeField] private CoolDown _throwCooldown;
 		[SerializeField] private AnimatorController _armed;
 		[SerializeField] private AnimatorController _disarmed;
 
@@ -167,7 +168,11 @@ namespace Assets.Scripts.Creatures
 
 		public void Throw()
 		{
-			Animator.SetTrigger(ThrowKey);
+			if(_throwCooldown.IsReady)
+			{
+				Animator.SetTrigger(ThrowKey);
+				_throwCooldown.Reset();
+			}
 		}
 	}
 }

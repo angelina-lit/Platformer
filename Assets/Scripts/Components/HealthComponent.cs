@@ -16,8 +16,9 @@ namespace Assets.Scripts.Components
 
 		public void ModifyHealth(int healthDelta)
         {
-            _health += healthDelta;
+            if (_health <= 0) return;
 
+            _health += healthDelta;
             _onChange?.Invoke(_health);
 
             if (healthDelta < 0) _onDamage?.Invoke();
