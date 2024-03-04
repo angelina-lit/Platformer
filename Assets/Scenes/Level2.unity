@@ -783,6 +783,14 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1775234930}
+    - target: {fileID: 7905557871444631340, guid: e5313e1ec98acdc428240bf6fcb54028, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.4796567
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905557871444631340, guid: e5313e1ec98acdc428240bf6fcb54028, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.76259
+      objectReference: {fileID: 0}
     - target: {fileID: 7905557871970668936, guid: e5313e1ec98acdc428240bf6fcb54028, type: 3}
       propertyPath: m_Name
       value: Camera
@@ -830,6 +838,26 @@ PrefabInstance:
     - target: {fileID: 7905557871970668937, guid: e5313e1ec98acdc428240bf6fcb54028, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905557872254221587, guid: e5313e1ec98acdc428240bf6fcb54028, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
+      value: 6.9131055
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905557872254221587, guid: e5313e1ec98acdc428240bf6fcb54028, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
+      value: 5.0440397
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905557872254221587, guid: e5313e1ec98acdc428240bf6fcb54028, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
+      value: -7.8208227
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905557872254221587, guid: e5313e1ec98acdc428240bf6fcb54028, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
+      value: 5.0487423
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905557872254221587, guid: e5313e1ec98acdc428240bf6fcb54028, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
+      value: 6.8991575
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5313e1ec98acdc428240bf6fcb54028, type: 3}
@@ -2074,6 +2102,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 655179015541269593, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
+      propertyPath: _sceneName
+      value: Level3
+      objectReference: {fileID: 0}
     - target: {fileID: 655179015541269596, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
       propertyPath: m_RootOrder
       value: 11
