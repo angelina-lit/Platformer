@@ -1,8 +1,6 @@
 using Assets.Scripts.Components;
 using Assets.Scripts.Model;
 using Assets.Scripts.Utils;
-using System;
-using Unity.VisualScripting;
 using UnityEditor.Animations;
 using UnityEngine;
 
