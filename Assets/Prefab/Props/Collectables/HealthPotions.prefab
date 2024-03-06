@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5091324384854170684}
   - component: {fileID: 5091324384854170685}
   - component: {fileID: 5091324384854170682}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: HealthPotions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +102,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
   _action:
     m_PersistentCalls:
       m_Calls:

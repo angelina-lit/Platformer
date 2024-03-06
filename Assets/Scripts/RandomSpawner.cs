@@ -52,10 +52,10 @@ public class RandomSpawner : MonoBehaviour
 
 		var leftBound = GetUnitOnCircle(middleAngleDelta + _sectorAngle);
 		Handles.DrawLine(position, position + leftBound);
-		Handles.DrawSolidArc(position, Vector3.forward, rightBound, _sectorAngle, _sectorRotation); //последний посмотреть
+		Handles.DrawSolidArc(position, Vector3.forward, rightBound, _sectorAngle, _sectorRotation);
 
         Handles.color = new Color(1f, 1f, 1f, 0.1f);
-		Handles.DrawSolidArc(position, Vector3.forward, rightBound, _sectorAngle, _sectorRotation); //последний посмотреть
+		Handles.DrawSolidArc(position, Vector3.forward, rightBound, _sectorAngle, _sectorRotation);
 	}
 
     private Vector2 AngleToVectorInSector(float angle)

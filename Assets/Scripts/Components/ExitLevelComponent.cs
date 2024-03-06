@@ -1,3 +1,4 @@
+using Assets.Scripts.Model;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ namespace Assets.Scripts.Components
 
         public void Exit()
         {
+            var session = FindObjectOfType<GameSession>();
+            session.Save();
             SceneManager.LoadScene(_sceneName);
         }
     }

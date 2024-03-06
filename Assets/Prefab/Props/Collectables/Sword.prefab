@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8166870302858844078}
   - component: {fileID: 8166870302858844083}
   - component: {fileID: 8166870302858844084}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,6 +147,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
   _action:
     m_PersistentCalls:
       m_Calls:

@@ -48,9 +48,9 @@ MonoBehaviour:
   _count: 10
   _drop:
   - Drop: {fileID: 1139435671457720664, guid: 375fa6ce1a47b9a4394bbb66ce84b1b0, type: 3}
-    Probability: 20
+    Probability: 50
   - Drop: {fileID: 7499051716348425556, guid: 73aadf68be1ae4a459e3f7ebbacd0d0a, type: 3}
-    Probability: 80
+    Probability: 50
   _onDropCalculated:
     m_PersistentCalls:
       m_Calls:

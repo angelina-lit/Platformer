@@ -12,7 +12,6 @@ namespace Assets.Scripts.Creatures
 		[SerializeField] private LayerCheck _wallCheck;
 
 		[SerializeField] private float _slamDownVelocity;
-		[SerializeField] private float _intaractionRadius;
 
 		[SerializeField] private CoolDown _throwCooldown;
 		[SerializeField] private AnimatorController _armed;
@@ -23,6 +22,7 @@ namespace Assets.Scripts.Creatures
 		[SerializeField] private ParticleSystem _hitParticles;
 
 		private static readonly int ThrowKey = Animator.StringToHash("throw");
+		private static readonly int IsOnWall = Animator.StringToHash("is-on-wall");
 
 		private bool _allowDoubleJump;
 		private bool _isOnWall;
@@ -55,7 +55,8 @@ namespace Assets.Scripts.Creatures
 		{
 			base.Update();
 
-			if (_wallCheck.IsTouchingLayer && Direction.x == transform.localScale.x)
+			var moveToSameDirection = Direction.x * transform.lossyScale.x > 0;
+			if (_wallCheck.IsTouchingLayer && moveToSameDirection)
 			{
 				_isOnWall = true;
 				Rigidbody.gravityScale = 0;
@@ -65,6 +66,8 @@ namespace Assets.Scripts.Creatures
 				_isOnWall = false;
 				Rigidbody.gravityScale = _defaultGravityScale;
 			}
+
+			Animator.SetBool(IsOnWall, _isOnWall);
 		}
 
 		protected override float CalculateYVelocity()
@@ -80,7 +83,7 @@ namespace Assets.Scripts.Creatures
 
 		protected override float CalculateJumpVelocity(float yVelocity)
 		{
-			if (!IsGrounded && _allowDoubleJump)
+			if (!IsGrounded && _allowDoubleJump && !_isOnWall)
 			{
 				_particles.Spawn("Jump");
 				_allowDoubleJump = false;
