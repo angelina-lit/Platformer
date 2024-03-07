@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 258674747950330105}
   m_Layer: 14
   m_Name: Vision
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1, y: -0.070476025}
+  m_Offset: {x: -1.8361282, y: -0.070476025}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -58,7 +58,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 0.659048}
+  m_Size: {x: 5.6722574, y: 0.659048}
   m_EdgeRadius: 0
 --- !u!114 &258674747950330104
 MonoBehaviour:
@@ -94,19 +94,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   _action:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &258674748023285766
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +366,7 @@ GameObject:
   - component: {fileID: 258674748836096415}
   m_Layer: 14
   m_Name: AttackRange
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -391,7 +379,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258674748836096409}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.392, y: -0.192, z: 2}
+  m_LocalPosition: {x: -0.392, y: -0.192, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -488,7 +476,7 @@ GameObject:
   - component: {fileID: 258674749813836262}
   m_Layer: 14
   m_Name: PearlThrowPosition
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,7 +489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258674749813836256}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.488, y: -0.297, z: 2}
+  m_LocalPosition: {x: -0.488, y: -0.297, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -521,4 +509,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 258674749813836263}
-  _prefab: {fileID: 8950574016858117615, guid: fee98ccbdb9e3e148b418c79d40be420, type: 3}
+  _prefab: {fileID: 8950574016858117615, guid: 1c7ba5115d927e7488da3589e074ed7f, type: 3}

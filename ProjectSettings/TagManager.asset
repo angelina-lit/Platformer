@@ -9,6 +9,7 @@ TagManager:
   - Interactable
   - Wall
   - Ground
+  - Drop
   layers:
   - Default
   - TransparentFX
