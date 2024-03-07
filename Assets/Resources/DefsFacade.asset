@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b39b54fb4e1fe46a725f5998909878, type: 3}
+  m_Name: DefsFacade
+  m_EditorClassIdentifier: 
+  _items: {fileID: 11400000, guid: f91e7f192abbfdc4191a0b493274a288, type: 2}

@@ -1,8 +1,10 @@
 using Assets.Scripts.Components;
 using Assets.Scripts.Model;
 using Assets.Scripts.Utils;
+using System;
 using UnityEditor.Animations;
 using UnityEngine;
+using static InventoryData;
 
 namespace Assets.Scripts.Creatures
 {
@@ -30,6 +32,9 @@ namespace Assets.Scripts.Creatures
 		private GameSession _session;
 		private float _defaultGravityScale;
 
+		private int CoinsCount => _session.Data.Inventory.Count("Coin");
+		private int SwordCount => _session.Data.Inventory.Count("Sword");
+
 		protected override void Awake()
 		{
 			base.Awake();
@@ -41,9 +46,21 @@ namespace Assets.Scripts.Creatures
 		{
 			_session = FindObjectOfType<GameSession>();
 			var health = GetComponent<HealthComponent>();
+			_session.Data.Inventory.OnChanged += OnInventoryChanged;
 
 			health.SetHealth(_session.Data.Hp);
 			UpdateHeroWeapon();
+		}
+
+		private void OnDestroy()
+		{
+			_session.Data.Inventory.OnChanged -= OnInventoryChanged;
+		}
+
+		private void OnInventoryChanged(string id, int value)
+		{
+			if (id == "Sword")
+				UpdateHeroWeapon();
 		}
 
 		public void OnHealthChanged(int currentHealth)
@@ -93,17 +110,21 @@ namespace Assets.Scripts.Creatures
 			return base.CalculateJumpVelocity(yVelocity);
 		}
 
-		public void AddCoins(int coinAmount)
+		public void AddInInventory(string id, int value)
+		{
+			_session.Data.Inventory.Add(id, value);
+		}
+
+		/*public void AddCoins(int coinAmount)
 		{
 			_session.Data.Coins += coinAmount;
 			Debug.Log($"{coinAmount} coins added. Total coins: {_session.Data.Coins}");
-		}
+		}*/
 
 		public override void TakeDamage()
 		{
 			base.TakeDamage();
-
-			if (_session.Data.Coins > 0)
+			if (CoinsCount > 0)
 			{
 				SpawnCoins();
 			}
@@ -111,8 +132,8 @@ namespace Assets.Scripts.Creatures
 
 		public void SpawnCoins()
 		{
-			var numCoinsToDispose = Mathf.Min(_session.Data.Coins, 5);
-			_session.Data.Coins -= numCoinsToDispose;
+			var numCoinsToDispose = Mathf.Min(CoinsCount, 5);
+			_session.Data.Inventory.Remove("Coin", numCoinsToDispose);
 
 			var burst = _hitParticles.emission.GetBurst(0);
 			burst.count = numCoinsToDispose;
@@ -137,29 +158,29 @@ namespace Assets.Scripts.Creatures
 					_particles.Spawn("SlamDown");
 				}
 
-				//if (contact.relativeVelocity.y >= _damageVelocity)
-				//{
-				//	GetComponent<HealthComponent>().ModifyHealth(-1);
-				//}
+				/*if (contact.relativeVelocity.y >= _damageVelocity)
+				{
+					GetComponent<HealthComponent>().ModifyHealth(-1);
+				}*/
 			}
 		}
 
 		public override void Attack()
 		{
-			if (!_session.Data.IsArmed) return;
+			if (SwordCount <= 0) return;
 
 			base.Attack();
 		}
 
-		public void ArmHero()
+		/*public void ArmHero()
 		{
 			_session.Data.IsArmed = true;
 			UpdateHeroWeapon();
-		}
+		}*/
 
 		private void UpdateHeroWeapon()
 		{
-			Animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _disarmed; //более короткая запись if|else
+			Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _disarmed; //более короткая запись if|else
 		}
 
 		public void OnDoThrow()
@@ -169,7 +190,7 @@ namespace Assets.Scripts.Creatures
 
 		public void Throw()
 		{
-			if(_throwCooldown.IsReady)
+			if (_throwCooldown.IsReady)
 			{
 				Animator.SetTrigger(ThrowKey);
 				_throwCooldown.Reset();

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7499051716348425547}
   - component: {fileID: -252556036422676068}
   - component: {fileID: 7499051716348425546}
-  - component: {fileID: 7499051716348425557}
   - component: {fileID: 8272159940280808338}
+  - component: {fileID: 2559365583700928439}
   m_Layer: 15
   m_Name: DropSilverCoin
   m_TagString: Untagged
@@ -188,19 +188,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &7499051716348425557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7499051716348425556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c78a7b3eaa56a1142a99e05a15b21832, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinAmount: 1
 --- !u!114 &8272159940280808338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,9 +216,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7499051716348425557}
-        m_TargetAssemblyTypeName: Assets.Scripts.Components.AddCoinComponent, Assembly-CSharp
-        m_MethodName: AddCoins
+      - m_Target: {fileID: 2559365583700928439}
+        m_TargetAssemblyTypeName: InventoryAddComponent, Assembly-CSharp
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -253,3 +240,17 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2559365583700928439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7499051716348425556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737089282c0f15d458771762cce80118, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Coin
+  _count: 1

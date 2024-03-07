@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5671659811017773794, guid: e9b73fa14daecfd4ab296ce076b9b415, type: 3}
+      propertyPath: _count
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7499051716348425546, guid: e9b73fa14daecfd4ab296ce076b9b415, type: 3}
       propertyPath: _clips.Array.data[0]._sprites.Array.size
       value: 4
