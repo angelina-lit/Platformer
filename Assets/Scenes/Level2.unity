@@ -1887,9 +1887,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    Coins: 0
+    _inventory:
+      _inventory: []
     Hp: 10
-    IsArmed: 1
 --- !u!4 &1392148167
 Transform:
   m_ObjectHideFlags: 0
@@ -3902,6 +3902,14 @@ PrefabInstance:
     - target: {fileID: 258674748023285766, guid: 67cfb0404b03f1545adda3b34d6595d1, type: 3}
       propertyPath: m_Name
       value: Seashell
+      objectReference: {fileID: 0}
+    - target: {fileID: 258674748836096414, guid: 67cfb0404b03f1545adda3b34d6595d1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 258674748836096415, guid: 67cfb0404b03f1545adda3b34d6595d1, type: 3}
+      propertyPath: _isTouchingLayer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67cfb0404b03f1545adda3b34d6595d1, type: 3}
