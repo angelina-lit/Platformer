@@ -102,8 +102,8 @@ namespace Assets.Scripts.Creatures
 		{
 			if (!IsGrounded && _allowDoubleJump && !_isOnWall)
 			{
-				_particles.Spawn("Jump");
 				_allowDoubleJump = false;
+				DoJumpVfx();
 				return _jumpSpeed;
 			}
 
@@ -114,12 +114,6 @@ namespace Assets.Scripts.Creatures
 		{
 			_session.Data.Inventory.Add(id, value);
 		}
-
-		/*public void AddCoins(int coinAmount)
-		{
-			_session.Data.Coins += coinAmount;
-			Debug.Log($"{coinAmount} coins added. Total coins: {_session.Data.Coins}");
-		}*/
 
 		public override void TakeDamage()
 		{
@@ -157,11 +151,6 @@ namespace Assets.Scripts.Creatures
 				{
 					_particles.Spawn("SlamDown");
 				}
-
-				/*if (contact.relativeVelocity.y >= _damageVelocity)
-				{
-					GetComponent<HealthComponent>().ModifyHealth(-1);
-				}*/
 			}
 		}
 
@@ -172,12 +161,6 @@ namespace Assets.Scripts.Creatures
 			base.Attack();
 		}
 
-		/*public void ArmHero()
-		{
-			_session.Data.IsArmed = true;
-			UpdateHeroWeapon();
-		}*/
-
 		private void UpdateHeroWeapon()
 		{
 			Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _disarmed; //более короткая запись if|else
@@ -185,7 +168,9 @@ namespace Assets.Scripts.Creatures
 
 		public void OnDoThrow()
 		{
+			Sounds.Play("Range");
 			_particles.Spawn("Throw");
+			//_session.Data.Inventory.Remove("Sword", 1);
 		}
 
 		public void Throw()
