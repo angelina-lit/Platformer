@@ -32,10 +32,16 @@ namespace Assets.Scripts
 
 		public void OnThrow(InputAction.CallbackContext context)
 		{
-			if (context.performed)
+			if (context.started)
             {
-                _hero.Throw();
+                _hero.StartThrowing();
             }
+
+            if (context.canceled)
+            {
+
+				_hero.PerformThrowing();
+			}
 		}
 	}
 }

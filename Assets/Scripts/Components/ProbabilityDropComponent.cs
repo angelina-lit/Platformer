@@ -47,7 +47,12 @@ public class ProbabilityDropComponent : MonoBehaviour
         _onDropCalculated?.Invoke(itemsToDrop);
     }
 
-    [Serializable]
+	internal void SetCount(int count)
+	{
+		_count = count;
+	}
+
+	[Serializable]
     public class DropData
     {
         public GameObject Drop;

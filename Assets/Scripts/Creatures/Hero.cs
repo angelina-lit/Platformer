@@ -2,6 +2,7 @@ using Assets.Scripts.Components;
 using Assets.Scripts.Model;
 using Assets.Scripts.Utils;
 using System;
+using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
 using static InventoryData;
@@ -14,20 +15,23 @@ namespace Assets.Scripts.Creatures
 		[SerializeField] private LayerCheck _wallCheck;
 
 		[SerializeField] private float _slamDownVelocity;
-
 		[SerializeField] private CoolDown _throwCooldown;
 		[SerializeField] private AnimatorController _armed;
 		[SerializeField] private AnimatorController _disarmed;
 
-		[Space]
-		[Header("Particles")]
-		[SerializeField] private ParticleSystem _hitParticles;
+		[Header("Super throw")]
+		[SerializeField] private CoolDown _superThrowCoolDown;
+
+		[SerializeField] private int _superThrowParticles;
+		[SerializeField] private float _superThrowDelay;
+		[SerializeField] private ProbabilityDropComponent _hitDrop;
 
 		private static readonly int ThrowKey = Animator.StringToHash("throw");
 		private static readonly int IsOnWall = Animator.StringToHash("is-on-wall");
 
 		private bool _allowDoubleJump;
 		private bool _isOnWall;
+		private bool _superThrow;
 
 		private GameSession _session;
 		private float _defaultGravityScale;
@@ -129,12 +133,8 @@ namespace Assets.Scripts.Creatures
 			var numCoinsToDispose = Mathf.Min(CoinsCount, 5);
 			_session.Data.Inventory.Remove("Coin", numCoinsToDispose);
 
-			var burst = _hitParticles.emission.GetBurst(0);
-			burst.count = numCoinsToDispose;
-			_hitParticles.emission.SetBurst(0, burst);
-
-			_hitParticles.gameObject.SetActive(true);
-			_hitParticles.Play();
+			_hitDrop.SetCount(numCoinsToDispose);
+			_hitDrop.CalculateDrop();
 		}
 
 		public void Interact()
@@ -168,18 +168,48 @@ namespace Assets.Scripts.Creatures
 
 		public void OnDoThrow()
 		{
-			Sounds.Play("Range");
-			_particles.Spawn("Throw");
-			//_session.Data.Inventory.Remove("Sword", 1);
+			if (_superThrow)
+			{
+				var numThrows = Mathf.Min(_superThrowParticles, SwordCount - 1);
+				StartCoroutine(DoSuperThrow(numThrows));
+			}
+			else
+			{
+				ThrowAndRemoveFromInventory();
+			}
+
+			_superThrow = false;
 		}
 
-		public void Throw()
+		private IEnumerator DoSuperThrow(int numThrows)
 		{
-			if (_throwCooldown.IsReady)
+			for (int i = 0; i < numThrows; i++)
 			{
-				Animator.SetTrigger(ThrowKey);
-				_throwCooldown.Reset();
+				ThrowAndRemoveFromInventory();
+				yield return new WaitForSeconds(_superThrowDelay);
 			}
+		}
+
+		private void ThrowAndRemoveFromInventory()
+		{
+			Sounds.Play("Range");
+			_particles.Spawn("Throw");
+			_session.Data.Inventory.Remove("Sword", 1);
+		}
+
+		public void StartThrowing()
+		{
+			_superThrowCoolDown.Reset();
+		}
+
+		public void PerformThrowing()
+		{
+			if (!_throwCooldown.IsReady || SwordCount <= 1) return;
+
+			if (_superThrowCoolDown.IsReady) _superThrow = true;
+
+			Animator.SetTrigger(ThrowKey);
+			_throwCooldown.Reset();
 		}
 	}
 }
