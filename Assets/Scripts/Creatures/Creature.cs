@@ -1,11 +1,7 @@
+using Assets.Scripts;
 using Assets.Scripts.Components;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Assets.Scripts.Creatures
-{
 	public class Creature : MonoBehaviour
 	{
 		[Header("Params")]
@@ -137,4 +133,3 @@ namespace Assets.Scripts.Creatures
 			//_particles.Spawn("Slash");
 		}
 	}
-}

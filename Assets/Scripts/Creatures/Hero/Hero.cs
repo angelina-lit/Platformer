@@ -1,11 +1,9 @@
 using Assets.Scripts.Components;
 using Assets.Scripts.Model;
 using Assets.Scripts.Utils;
-using System;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
-using static InventoryData;
 
 namespace Assets.Scripts.Creatures
 {
