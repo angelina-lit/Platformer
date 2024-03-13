@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Creatures
 {
-	public class Hero : Creature
+	public class Hero : Creature, ICanAddInInventory
 	{
 		[SerializeField] private CheckCircleOverlap _intaractionCheck;
 		[SerializeField] private LayerCheck _wallCheck;
