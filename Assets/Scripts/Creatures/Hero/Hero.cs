@@ -50,7 +50,7 @@ namespace Assets.Scripts.Creatures
 			var health = GetComponent<HealthComponent>();
 			_session.Data.Inventory.OnChanged += OnInventoryChanged;
 
-			health.SetHealth(_session.Data.Hp);
+			health.SetHealth(_session.Data.Hp.Value);
 			UpdateHeroWeapon();
 		}
 
@@ -67,7 +67,7 @@ namespace Assets.Scripts.Creatures
 
 		public void OnHealthChanged(int currentHealth)
 		{
-			_session.Data.Hp = currentHealth;
+			_session.Data.Hp.Value = currentHealth;
 		}
 
 		protected override void Update()

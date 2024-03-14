@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
+[Serializable]
 public abstract class PersistentProperty<TPropertyType>
 {
-	[SerializeField] private TPropertyType _value;
-	private TPropertyType _stored;
+	[SerializeField] protected TPropertyType _value;
+	protected TPropertyType _stored;
 
 	private TPropertyType _defaultValue;
 
@@ -24,7 +26,7 @@ public abstract class PersistentProperty<TPropertyType>
 			var isEquals = _stored.Equals(value);
 			if (isEquals) return;
 
-			var oldValue = _value;
+			var oldValue = _stored;
 			Write(value);
 			_stored = _value = value;
 
