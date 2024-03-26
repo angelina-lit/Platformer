@@ -1,6 +1,7 @@
 using Assets.Scripts.Components;
 using Assets.Scripts.Model;
 using Assets.Scripts.Utils;
+using System;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -32,6 +33,7 @@ namespace Assets.Scripts.Creatures
 		private bool _superThrow;
 
 		private GameSession _session;
+		private HealthComponent _health;
 		private float _defaultGravityScale;
 
 		private int CoinsCount => _session.Data.Inventory.Count("Coin");
@@ -47,10 +49,10 @@ namespace Assets.Scripts.Creatures
 		private void Start()
 		{
 			_session = FindObjectOfType<GameSession>();
-			var health = GetComponent<HealthComponent>();
+			_health = GetComponent<HealthComponent>();
 			_session.Data.Inventory.OnChanged += OnInventoryChanged;
 
-			health.SetHealth(_session.Data.Hp.Value);
+			_health.SetHealth(_session.Data.Hp.Value);
 			UpdateHeroWeapon();
 		}
 
@@ -208,6 +210,16 @@ namespace Assets.Scripts.Creatures
 
 			Animator.SetTrigger(ThrowKey);
 			_throwCooldown.Reset();
+		}
+
+		internal void UsePotion()
+		{
+			var potionCount = _session.Data.Inventory.Count("HealthPotion");
+			if (potionCount > 0)
+			{
+				_health.ModifyHealth(5);
+				_session.Data.Inventory.Remove("HealthPotion", 1);
+			}
 		}
 	}
 }

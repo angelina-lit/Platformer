@@ -769,6 +769,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 36757b17-5e63-4b17-b7a4-fc816f4368b1
     m_ActionName: Hero/Throw[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5863421165642198706}
+        m_TargetAssemblyTypeName: Assets.Scripts.HeroInputReader, Assembly-CSharp
+        m_MethodName: OnUse
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8a579eb3-d1d9-4759-a48a-5f18801900dd
+    m_ActionName: Hero/Use[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
