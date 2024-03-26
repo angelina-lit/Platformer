@@ -29,7 +29,7 @@ TagManager:
   - Enemies
   - Collectables
   - Checkers
-  - 
+  - ColladableEnemies
   - 
   - 
   - 
@@ -56,4 +56,7 @@ TagManager:
     locked: 0
   - name: Props
     uniqueID: 2610430225
+    locked: 0
+  - name: Creatures
+    uniqueID: 1237597651
     locked: 0

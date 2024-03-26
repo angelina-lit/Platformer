@@ -23,7 +23,15 @@ public class RandomSpawner : MonoBehaviour
         _routine = StartCoroutine(StartSpawn(items));
     }
 
-    private IEnumerator StartSpawn(GameObject[] particles)
+	public void DropImmediate(GameObject[] items)
+	{
+        foreach (var item in items)
+        {
+            Spawn(item);
+        }
+    }
+
+	private IEnumerator StartSpawn(GameObject[] particles)
     {
         for (var i = 0; i < particles.Length; i++)
         {
