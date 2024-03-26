@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class ObservableProperty<TPropertyType>
@@ -8,7 +9,21 @@ public class ObservableProperty<TPropertyType>
 
 	public event OnPropertyChanged OnChanged;
 
-	public TPropertyType Value
+    public IDisposable Subscribe(OnPropertyChanged call)
+    {
+        OnChanged += call;
+        return new ActionDisposable( () => OnChanged -= call);
+    }
+
+	public IDisposable SubscribeAndInvoke(OnPropertyChanged call)
+	{
+		OnChanged += call;
+		var dispose = new ActionDisposable(() => OnChanged -= call);
+        call(_value, _value);
+        return dispose;
+	}
+
+	public virtual TPropertyType Value
     {
         get => _value;
         set

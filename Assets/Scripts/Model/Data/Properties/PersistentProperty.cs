@@ -13,6 +13,12 @@ public abstract class PersistentProperty<TPropertyType>
 
 	public event OnPropertyChanged OnChanged;
 
+	public IDisposable Subscribe(OnPropertyChanged call)
+	{
+		OnChanged += call;
+		return new ActionDisposable(() => OnChanged -= call);
+	}
+
 	public PersistentProperty(TPropertyType defaultValue)
 	{
 		_defaultValue = defaultValue;

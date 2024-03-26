@@ -15,9 +15,13 @@ MonoBehaviour:
   _items:
   - _id: Coin
     _isStackable: 1
+    _icon: {fileID: 1446069479, guid: 948aa5661bc1b03459bdfa445bdbb897, type: 3}
   - _id: Sword
     _isStackable: 1
+    _icon: {fileID: 21300000, guid: b3b4269cbc9a2f84bab187eae2233235, type: 3}
   - _id: Key
     _isStackable: 0
+    _icon: {fileID: 21300000, guid: 120f0776cc6395b4380f0c341cafd06a, type: 3}
   - _id: HealthPotion
     _isStackable: 0
+    _icon: {fileID: -507184521, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}

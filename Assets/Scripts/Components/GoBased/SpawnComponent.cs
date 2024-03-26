@@ -12,7 +12,7 @@ namespace Assets.Scripts.Components
         [ContextMenu("Spawn")]
         public void Spawn()
         {
-            var instance = Instantiate(_prefab, _target.position, Quaternion.identity);
+            var instance = SpawnUtils.Spawn(_prefab, _target.position);
             instance.transform.localScale = _target.lossyScale;
             instance.SetActive(true);
         }
