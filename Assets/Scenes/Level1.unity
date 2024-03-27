@@ -9974,12 +9974,12 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
-      - Id: Sword
-        Value: 5
-      - Id: Coin
-        Value: 5
+      - Id: PearlProjecttile
+        Value: 10
       - Id: Key
         Value: 1
+      - Id: Sword
+        Value: 5
     Hp:
       _value: 10
 --- !u!4 &1065936747

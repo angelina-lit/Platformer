@@ -24,6 +24,7 @@ namespace Assets.Scripts.Creatures
 		[SerializeField] private int _superThrowParticles;
 		[SerializeField] private float _superThrowDelay;
 		[SerializeField] private ProbabilityDropComponent _hitDrop;
+		[SerializeField] private SpawnComponent _throwSpawner;
 
 		private static readonly int ThrowKey = Animator.StringToHash("throw");
 		private static readonly int IsOnWall = Animator.StringToHash("is-on-wall");
@@ -36,8 +37,21 @@ namespace Assets.Scripts.Creatures
 		private HealthComponent _health;
 		private float _defaultGravityScale;
 
+		private const string SwordId = "Sword";
 		private int CoinsCount => _session.Data.Inventory.Count("Coin");
-		private int SwordCount => _session.Data.Inventory.Count("Sword");
+		private int SwordCount => _session.Data.Inventory.Count(SwordId);
+		private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
+		private bool CanThrow
+		{
+			get
+			{
+				if (SelectedItemId == SwordId)
+					return SwordCount > 1;
+
+				var def = DefsFacade.I.Items.Get(SelectedItemId);
+				return def.HasTag(ItemTag.Throwable);
+			}
+		}
 
 		protected override void Awake()
 		{
@@ -63,7 +77,7 @@ namespace Assets.Scripts.Creatures
 
 		private void OnInventoryChanged(string id, int value)
 		{
-			if (id == "Sword")
+			if (id == SwordId)
 				UpdateHeroWeapon();
 		}
 
@@ -170,7 +184,10 @@ namespace Assets.Scripts.Creatures
 		{
 			if (_superThrow)
 			{
-				var numThrows = Mathf.Min(_superThrowParticles, SwordCount - 1);
+				var throwableCount = _session.Data.Inventory.Count(SelectedItemId);
+				var possibleCount = SelectedItemId == SwordId ? throwableCount - 1 : throwableCount;
+				
+				var numThrows = Mathf.Min(_superThrowParticles, possibleCount);
 				StartCoroutine(DoSuperThrow(numThrows));
 			}
 			else
@@ -193,8 +210,13 @@ namespace Assets.Scripts.Creatures
 		private void ThrowAndRemoveFromInventory()
 		{
 			Sounds.Play("Range");
-			_particles.Spawn("Throw");
-			_session.Data.Inventory.Remove("Sword", 1);
+			
+			var throwableId = _session.QuickInventory.SelectedItem.Id;
+			var throwableDef = DefsFacade.I.Throwable.Get(throwableId);
+			_throwSpawner.SetPrefab(throwableDef.Projectile);
+			_throwSpawner.Spawn();
+
+			_session.Data.Inventory.Remove(throwableId, 1);
 		}
 
 		public void StartThrowing()
@@ -204,23 +226,13 @@ namespace Assets.Scripts.Creatures
 
 		public void PerformThrowing()
 		{
-			if (!_throwCooldown.IsReady || SwordCount <= 1) return;
+			if (!_throwCooldown.IsReady || !CanThrow) return;
 
 			if (_superThrowCoolDown.IsReady) _superThrow = true;
 
 			Animator.SetTrigger(ThrowKey);
 			_throwCooldown.Reset();
 		}
-
-		/*internal void UsePotion()
-		{
-			var potionCount = _session.Data.Inventory.Count("HealthPotion");
-			if (potionCount > 0)
-			{
-				_health.ModifyHealth(5);
-				_session.Data.Inventory.Remove("HealthPotion", 1);
-			}
-		}*/
 
 		internal void NextItem()
 		{

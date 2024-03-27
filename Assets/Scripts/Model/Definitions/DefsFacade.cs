@@ -4,9 +4,11 @@ using UnityEngine;
 public class DefsFacade : ScriptableObject
 {
     [SerializeField] private InventoryItemsDef _items;
+    [SerializeField] private ThrowableItemsDef _throwableItems;
     [SerializeField] private PlayerDef _player;
 
 	public InventoryItemsDef Items => _items;
+	public ThrowableItemsDef Throwable => _throwableItems;
 	public PlayerDef Player => _player;
 
     private static DefsFacade _instance;

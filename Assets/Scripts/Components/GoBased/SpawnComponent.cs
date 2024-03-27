@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,5 +17,10 @@ namespace Assets.Scripts.Components
             instance.transform.localScale = _target.lossyScale;
             instance.SetActive(true);
         }
-    }
+
+		public void SetPrefab(GameObject prefab)
+		{
+			_prefab = prefab;
+		}
+	}
 }

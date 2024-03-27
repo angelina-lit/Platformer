@@ -32,9 +32,9 @@ public class ObservableProperty<TPropertyType>
             var isSame = _value.Equals(value);
             if (isSame) return;
             var oldValue = _value;
-            InvokeChangedEvent(_value, oldValue);
             _value = value;
-        }
+			InvokeChangedEvent(_value, oldValue);
+		}
     }
 
     protected void InvokeChangedEvent(TPropertyType newValue, TPropertyType oldValue)

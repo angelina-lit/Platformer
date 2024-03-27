@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 1439571919561094882}
   - component: {fileID: 5171989176547555876}
   m_Layer: 13
-  m_Name: ThrowSwordSpawnPosition
+  m_Name: ThrowSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -667,6 +667,7 @@ MonoBehaviour:
   _superThrowParticles: 3
   _superThrowDelay: 0.2
   _hitDrop: {fileID: 7906211034231425283}
+  _throwSpawner: {fileID: 5171989176547555876}
 --- !u!114 &5863421165642198706
 MonoBehaviour:
   m_ObjectHideFlags: 0
