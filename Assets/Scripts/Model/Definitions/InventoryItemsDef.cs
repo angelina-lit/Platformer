@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Defs/InventoryItems", fileName = "InventoryItems")]
@@ -25,12 +26,17 @@ public class InventoryItemsDef : ScriptableObject
 public struct ItemDef
 {
 	[SerializeField] private string _id;
-	[SerializeField] private bool _isStackable;
 	[SerializeField] private Sprite _icon;
+	[SerializeField] private ItemTag[] _tags;
+
 	public string Id => _id;
-	public bool IsStackable => _isStackable;
 
 	public bool IsVoid => string.IsNullOrEmpty(_id);
 
 	public Sprite Icon => _icon;
+
+	public bool HasTag(ItemTag tag)
+	{
+		return _tags.Contains(tag);
+	}
 }

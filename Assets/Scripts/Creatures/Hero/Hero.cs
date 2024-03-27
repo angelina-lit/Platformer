@@ -212,7 +212,7 @@ namespace Assets.Scripts.Creatures
 			_throwCooldown.Reset();
 		}
 
-		internal void UsePotion()
+		/*internal void UsePotion()
 		{
 			var potionCount = _session.Data.Inventory.Count("HealthPotion");
 			if (potionCount > 0)
@@ -220,6 +220,11 @@ namespace Assets.Scripts.Creatures
 				_health.ModifyHealth(5);
 				_session.Data.Inventory.Remove("HealthPotion", 1);
 			}
+		}*/
+
+		internal void NextItem()
+		{
+			_session.QuickInventory.SetNextItem();
 		}
 	}
 }

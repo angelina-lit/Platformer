@@ -773,7 +773,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5863421165642198706}
         m_TargetAssemblyTypeName: Assets.Scripts.HeroInputReader, Assembly-CSharp
-        m_MethodName: OnUse
+        m_MethodName: OnNextItem
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

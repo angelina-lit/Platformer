@@ -3371,7 +3371,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _inventory:
-      _inventory: []
+      _inventory:
+      - Id: Sword
+        Value: 5
+      - Id: Coin
+        Value: 15
     Hp:
       _value: 10
 --- !u!4 &1392148167
