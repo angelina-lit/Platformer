@@ -203,8 +203,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _required:
-  - Id: Coin
-    Value: 2
   - Id: Key
     Value: 1
   _removeAfterUse: 1
