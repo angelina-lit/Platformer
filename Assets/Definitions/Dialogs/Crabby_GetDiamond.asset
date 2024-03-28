@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fa85068e768cae4e9eb17447719a502, type: 3}
-  m_Name: Crabby_GetGem
+  m_Name: Crabby_GetDiamond
   m_EditorClassIdentifier: 
   _data:
-    _sentences: []
+    _sentences:
+    - Get me a Green Diamond and I will show you a miracle!
+    - Go away untill you not have a Green Diamond!
