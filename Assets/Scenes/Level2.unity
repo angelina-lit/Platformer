@@ -9283,10 +9283,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Seashell
       objectReference: {fileID: 0}
-    - target: {fileID: 258674748023285766, guid: 67cfb0404b03f1545adda3b34d6595d1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67cfb0404b03f1545adda3b34d6595d1, type: 3}
 --- !u!1001 &2606636648431715694

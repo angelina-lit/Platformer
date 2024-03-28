@@ -12,7 +12,9 @@ namespace Assets.Scripts.Components
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] public UnityEvent _onDie;
-		[SerializeField] private HealthChangeEvent _onChange;
+		[SerializeField] public HealthChangeEvent _onChange;
+
+        public int Health => _health;
 
 		public void ModifyHealth(int healthDelta)
         {
@@ -28,11 +30,13 @@ namespace Assets.Scripts.Components
             if (_health <= 0) _onDie?.Invoke();
         }
 
+#if UNITY_EDITOR
         [ContextMenu("Update Health")]
         private void UpdateHealth()
         {
             _onChange?.Invoke(_health);
         }
+#endif
 
         public void SetHealth(int health)
         {

@@ -24,7 +24,7 @@ MonoBehaviour:
     _tags: 0000000001000000
   - _id: HealthPotion
     _icon: {fileID: -507184521, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
-    _tags: 0000000001000000
+    _tags: 00000000
   - _id: PearlProjecttile
     _icon: {fileID: 21300000, guid: 505e2a120eb020946ab297b6a28cb224, type: 3}
     _tags: 000000000100000002000000
