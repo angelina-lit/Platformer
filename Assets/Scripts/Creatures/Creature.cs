@@ -1,5 +1,3 @@
-using Assets.Scripts;
-using Assets.Scripts.Components;
 using UnityEngine;
 
 	public class Creature : MonoBehaviour

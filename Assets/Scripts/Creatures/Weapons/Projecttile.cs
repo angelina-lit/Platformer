@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Assets.Scripts.Creatures.Weapons
-{
-	public class Projecttile : BaseProjectile
+public class Projecttile : BaseProjectile
 	{
 		protected override void Start()
 		{
@@ -12,4 +10,3 @@ namespace Assets.Scripts.Creatures.Weapons
 			Rigidbody.AddForce(force, ForceMode2D.Impulse);
 		}
 	}
-}

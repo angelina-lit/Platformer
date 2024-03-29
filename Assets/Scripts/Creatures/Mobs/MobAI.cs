@@ -1,11 +1,7 @@
-﻿using Assets.Scripts.Components;
-using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Creatures
-{
-	public class MobAI : MonoBehaviour
+public class MobAI : MonoBehaviour
 	{
 		[SerializeField] private LayerCheck _vision;
 		[SerializeField] private LayerCheck _canAttack;
@@ -126,4 +122,3 @@ namespace Assets.Scripts.Creatures
 			if (_current != null) StopCoroutine(_current);
 		}
 	}
-}

@@ -1,14 +1,8 @@
-using Assets.Scripts.Components;
-using Assets.Scripts.Model;
-using Assets.Scripts.Utils;
-using System;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
 
-namespace Assets.Scripts.Creatures
-{
-	public class Hero : Creature, ICanAddInInventory
+public class Hero : Creature, ICanAddInInventory
 	{
 		[SerializeField] private CheckCircleOverlap _intaractionCheck;
 		[SerializeField] private LayerCheck _wallCheck;
@@ -239,4 +233,3 @@ namespace Assets.Scripts.Creatures
 			_session.QuickInventory.SetNextItem();
 		}
 	}
-}

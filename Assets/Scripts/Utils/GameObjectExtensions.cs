@@ -1,11 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Assets.Scripts.Utils
-{
-    public static class GameObjectExtensions
+public static class GameObjectExtensions
     {
         public static bool IsInLayer(this GameObject go, LayerMask layer)
         {
@@ -26,4 +21,4 @@ namespace Assets.Scripts.Utils
             return default;
         }
     }
-}
+

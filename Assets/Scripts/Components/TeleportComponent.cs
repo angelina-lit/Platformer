@@ -1,11 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Assets.Scripts.Components
-{
-    public class TeleportComponent : MonoBehaviour
+public class TeleportComponent : MonoBehaviour
     {
         [SerializeField] private Transform _destTransform;
         [SerializeField] private float _alphaTime = 1;
@@ -71,4 +68,4 @@ namespace Assets.Scripts.Components
 			}
 		}
     }
-}
+

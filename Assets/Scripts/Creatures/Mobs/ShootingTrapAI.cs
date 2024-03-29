@@ -1,5 +1,3 @@
-using Assets.Scripts;
-using Assets.Scripts.Utils;
 using UnityEngine;
 
 public class ShootingTrapAI : MonoBehaviour

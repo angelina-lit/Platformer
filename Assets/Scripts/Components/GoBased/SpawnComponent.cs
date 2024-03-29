@@ -1,10 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Components
-{
     public class SpawnComponent : MonoBehaviour
     {
         [SerializeField] private Transform _target;
@@ -23,4 +18,4 @@ namespace Assets.Scripts.Components
 			_prefab = prefab;
 		}
 	}
-}
+

@@ -2,9 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-namespace Assets.Scripts.Components
-{
-    public class SpawnListComponent : MonoBehaviour
+public class SpawnListComponent : MonoBehaviour
     {
         [SerializeField] private SpawnData[] _spawners;
 
@@ -40,4 +38,4 @@ namespace Assets.Scripts.Components
             public SpawnComponent Component;
         }
     }
-}
+

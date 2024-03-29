@@ -3,9 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.Scripts.Model
-{
-	public class GameSession : MonoBehaviour
+public class GameSession : MonoBehaviour
 	{
 		[SerializeField] private PlayerData _data;
 		[SerializeField] private string _defaultCheckPoint;
@@ -115,4 +113,3 @@ namespace Assets.Scripts.Model
 			_trash.Dispose();
 		}
 	}
-}

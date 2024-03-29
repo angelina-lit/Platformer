@@ -1,9 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Creatures
-{
-	public class PlatformPatrol : Patrol
+public class PlatformPatrol : Patrol
 	{
 		[SerializeField] private LayerCheck _groundCheck;
 		[SerializeField] private LayerCheck _obstrcleCheck;
@@ -29,4 +27,3 @@ namespace Assets.Scripts.Creatures
 			}
 		}
 	}
-}

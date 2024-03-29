@@ -1,5 +1,3 @@
-using Assets.Scripts.Components;
-using System;
 using UnityEngine;
 
 public class LifeBarWidget : MonoBehaviour

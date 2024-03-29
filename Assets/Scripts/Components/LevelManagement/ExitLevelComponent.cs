@@ -1,12 +1,7 @@
-using Assets.Scripts.Model;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.Scripts.Components
-{
-    public class ExitLevelComponent : MonoBehaviour
+public class ExitLevelComponent : MonoBehaviour
     {
         [SerializeField] private string _sceneName;
 
@@ -17,4 +12,3 @@ namespace Assets.Scripts.Components
             SceneManager.LoadScene(_sceneName);
         }
     }
-}

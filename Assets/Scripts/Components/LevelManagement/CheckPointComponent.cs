@@ -1,5 +1,3 @@
-using Assets.Scripts.Components;
-using Assets.Scripts.Model;
 using UnityEngine;
 using UnityEngine.Events;
 

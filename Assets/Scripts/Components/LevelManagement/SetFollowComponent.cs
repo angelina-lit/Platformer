@@ -1,4 +1,3 @@
-using Assets.Scripts.Creatures;
 using Cinemachine;
 using UnityEngine;
 

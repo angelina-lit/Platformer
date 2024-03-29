@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Defs/ThrowableItemsDef", fileName = "ThrowableItemsDef")]
@@ -22,7 +20,7 @@ public class ThrowableItemsDef : ScriptableObject
 [Serializable]
 public struct ThrowableDef
 {
-	[InventoryId] [SerializeField] private string _id;
+	[InventoryId][SerializeField] private string _id;
 	[SerializeField] private GameObject _projectile;
 
 	public string Id => _id;

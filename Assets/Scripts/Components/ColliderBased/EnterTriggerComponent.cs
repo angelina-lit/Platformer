@@ -1,11 +1,5 @@
-using Assets.Scripts.Utils;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-namespace Assets.Scripts.Components
-{
 	public class EnterTriggerComponent : MonoBehaviour
 	{
 		[SerializeField] private string _tag;
@@ -20,4 +14,3 @@ namespace Assets.Scripts.Components
 			_action?.Invoke(other.gameObject);
 		}
 	}
-}

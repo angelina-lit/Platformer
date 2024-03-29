@@ -1,12 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.Scripts
-{
 	[RequireComponent(typeof(SpriteRenderer))]
 
 	public class SpriteAnimation : MonoBehaviour
@@ -117,4 +112,3 @@ namespace Assets.Scripts
 		public bool AllowNextClip => _allowNextClip;
 		public UnityEvent OnComplete => _onComplete;
 	}
-}

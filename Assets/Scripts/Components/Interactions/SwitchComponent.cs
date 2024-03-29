@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Components
-{
-    public class SwitchComponent : MonoBehaviour
+public class SwitchComponent : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
         [SerializeField] private bool _state;
@@ -22,4 +18,4 @@ namespace Assets.Scripts.Components
             Switch();
         }
     }
-}
+

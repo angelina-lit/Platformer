@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Creatures
-{
-	public class PointPatrol : Patrol
+public class PointPatrol : Patrol
 	{
 		[SerializeField] private Transform[] _points;
 		[SerializeField] private float _treshold = 1f;
@@ -42,4 +36,3 @@ namespace Assets.Scripts.Creatures
 			return (_points[_destinationPointIndex].position - transform.position).magnitude < _treshold;
 		}
 	}
-}

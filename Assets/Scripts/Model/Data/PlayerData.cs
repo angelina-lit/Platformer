@@ -1,9 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Assets.Scripts.Model
-{
-	[Serializable]
+[Serializable]
 	public class PlayerData
 	{
 		[SerializeField] private InventoryData _inventory;
@@ -18,4 +16,3 @@ namespace Assets.Scripts.Model
 			return JsonUtility.FromJson<PlayerData>(json);
 		}
 	}
-}

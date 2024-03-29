@@ -1,10 +1,3 @@
-using Assets.Scripts;
-using Assets.Scripts.Components;
-using Assets.Scripts.Utils;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class SeashellTrapAI : MonoBehaviour

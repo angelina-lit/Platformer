@@ -2,9 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.Scripts.Components
-{
-	public class EnterCollisionComponent : MonoBehaviour
+public class EnterCollisionComponent : MonoBehaviour
 	{
 		[SerializeField] private string _tag;
 		[SerializeField] private EnterEvent _action;
@@ -21,4 +19,4 @@ namespace Assets.Scripts.Components
 	public class EnterEvent : UnityEvent<GameObject>
 	{
 	}
-}
+

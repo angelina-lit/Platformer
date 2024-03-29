@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Components
-{
-    public class ModifyHealthComponent : MonoBehaviour
+public class ModifyHealthComponent : MonoBehaviour
     {
         [SerializeField] private int _hpDelta;
 
@@ -15,4 +11,4 @@ namespace Assets.Scripts.Components
                 healthComponent.ModifyHealth(_hpDelta);
         }
     }
-}
+

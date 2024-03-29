@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.Scripts.Components
-{
-    public class InteractableComponent : MonoBehaviour
+public class InteractableComponent : MonoBehaviour
     {
         [SerializeField] private UnityEvent _action;
 
@@ -14,4 +10,3 @@ namespace Assets.Scripts.Components
             _action?.Invoke();
         }
     }
-}

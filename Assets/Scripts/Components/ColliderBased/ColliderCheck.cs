@@ -1,8 +1,6 @@
 using UnityEngine;
 
-namespace Assets.Scripts
-{
-	public class ColliderCheck : LayerCheck
+public class ColliderCheck : LayerCheck
 	{
 		private Collider2D _collider;
 
@@ -21,4 +19,4 @@ namespace Assets.Scripts
 			_isTouchingLayer = _collider.IsTouchingLayers(_layer);
 		}
 	}
-}
+

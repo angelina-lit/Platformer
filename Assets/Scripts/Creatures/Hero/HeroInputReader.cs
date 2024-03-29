@@ -1,10 +1,7 @@
-using Assets.Scripts.Creatures;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Assets.Scripts
-{
-	public class HeroInputReader : MonoBehaviour
+public class HeroInputReader : MonoBehaviour
 	{
 		[SerializeField] private Hero _hero;
 
@@ -52,4 +49,3 @@ namespace Assets.Scripts
 			}
 		}
 	}
-}

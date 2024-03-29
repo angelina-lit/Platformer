@@ -1,12 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.Scripts.Components
-{
-    public class HealthComponent : MonoBehaviour
+public class HealthComponent : MonoBehaviour
     {
         [SerializeField] private int _health;
         [SerializeField] private UnityEvent _onDamage;
@@ -53,4 +49,3 @@ namespace Assets.Scripts.Components
 		{
 		}
 	}
-}

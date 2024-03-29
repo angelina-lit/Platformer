@@ -1,12 +1,7 @@
-using Assets.Scripts.Model;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.Scripts.Components
-{
-    public class ReloadLevelComponent : MonoBehaviour
+public class ReloadLevelComponent : MonoBehaviour
     {
         public void Reload()
         {
@@ -17,4 +12,4 @@ namespace Assets.Scripts.Components
             SceneManager.LoadScene(scene.name);
         }
     }
-}
+

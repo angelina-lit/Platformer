@@ -1,12 +1,9 @@
-using Assets.Scripts.Utils;
 using System;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Assets.Scripts
-{
 	public class CheckCircleOverlap : MonoBehaviour
 	{
 		[SerializeField] private float _radius = 1f;
@@ -39,4 +36,3 @@ namespace Assets.Scripts
 		{
 		}
 	}
-}

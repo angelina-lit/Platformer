@@ -1,11 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Utils
-{
-	[Serializable]
+[Serializable]
 	public class CoolDown
 	{
 		[SerializeField] private float _value;
@@ -19,4 +15,3 @@ namespace Assets.Scripts.Utils
 
 		public bool IsReady => _timesUp <= Time.time;
 	}
-}
