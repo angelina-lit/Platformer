@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2606636648104688849}
   - component: {fileID: 2606636648104688848}
   - component: {fileID: 2606636648104688814}
+  - component: {fileID: 2039366622953046941}
+  - component: {fileID: 8946086298385171211}
   m_Layer: 0
   m_Name: WoodDoor(Enter)
   m_TagString: Untagged
@@ -118,3 +120,37 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
+--- !u!114 &2039366622953046941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2606636648104688851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba7bea6c03eb234887fce806fc8e576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 2606636648104688849}
+  _prefab: {fileID: 5863421165642198719, guid: 8e883a84b250a52498fd1f7a18bf8ee7, type: 3}
+--- !u!114 &8946086298385171211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2606636648104688851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecbf802a5ad16445b84258f5fa786df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 
+  _heroSpawner: {fileID: 2039366622953046941}
+  _setChecked:
+    m_PersistentCalls:
+      m_Calls: []
+  _setUnchecked:
+    m_PersistentCalls:
+      m_Calls: []
