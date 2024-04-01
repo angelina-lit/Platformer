@@ -10325,10 +10325,10 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
-      - Id: PearlProjecttile
-        Value: 10
       - Id: Sword
         Value: 5
+      - Id: PearlProjectile
+        Value: 10
     Hp:
       _value: 10
   _defaultCheckPoint: level1-checkpoint1
