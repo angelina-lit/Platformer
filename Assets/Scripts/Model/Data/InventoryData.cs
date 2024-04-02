@@ -111,7 +111,7 @@ public class InventoryData
 		}
 	}
 
-	internal int Count(string id)
+	public int Count(string id)
 	{
 		var count = 0;
 		foreach (var item in _inventory)
@@ -123,6 +123,7 @@ public class InventoryData
 		return count;
 	}
 
+	//???
 	private InventoryItemData GetItem(string id)
 	{
 		foreach (var itemData in _inventory)
@@ -133,6 +134,28 @@ public class InventoryData
 
 		return null;
 	}
+
+	public bool IsEnough(params ItemWithCount[] items)
+	{
+		var joined = new Dictionary<string, int>();
+
+        foreach (var item in items)
+        {
+			if (joined.ContainsKey(item.ItemId))
+				joined[item.ItemId] += item.Count;
+			else 
+				joined.Add(item.ItemId, item.Count);
+        }
+
+        foreach (var kvp in joined)
+        {
+			var count = Count(kvp.Key);
+
+			if (count < kvp.Value) return false;
+        }
+
+		return true;
+    }
 }
 
 [Serializable]

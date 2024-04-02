@@ -2,5 +2,6 @@ public enum ItemTag
 {
     Stackable,
     Usable,
-    Throwable
+    Throwable,
+    Potion
 }

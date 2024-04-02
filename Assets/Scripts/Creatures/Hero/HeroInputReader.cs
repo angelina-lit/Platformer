@@ -37,7 +37,7 @@ public class HeroInputReader : MonoBehaviour
 			if (context.canceled)
 			{
 
-				_hero.PerformThrowing();
+				_hero.UseInventory();
 			}
 		}
 

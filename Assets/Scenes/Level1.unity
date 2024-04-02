@@ -10325,12 +10325,18 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
-      - Id: Sword
-        Value: 5
-      - Id: PearlProjectile
-        Value: 10
+      - Id: GreenDiamond
+        Value: 30
+      - Id: SmallHealthPotion
+        Value: 1
+      - Id: SpeedUpPotion
+        Value: 20
     Hp:
       _value: 10
+    Perks:
+      _used:
+        _value: 
+      _unlocked: []
   _defaultCheckPoint: level1-checkpoint1
 --- !u!4 &1065936747
 Transform:

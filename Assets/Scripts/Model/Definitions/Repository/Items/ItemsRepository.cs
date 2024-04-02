@@ -25,6 +25,6 @@ public struct ItemDef : IHaveId
 
 	public bool HasTag(ItemTag tag)
 	{
-		return _tags.Contains(tag);
+		return _tags?.Contains(tag) ?? false;
 	}
 }
