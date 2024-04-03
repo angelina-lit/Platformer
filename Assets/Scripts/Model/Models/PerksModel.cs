@@ -17,7 +17,7 @@ public class PerksModel : IDisposable
 	public PerksModel(PlayerData data)
     {
         _data = data;
-		//InterfaceSelection.Value = DefsFacade.I.Perks.All[0].Id; //??? не появляется герой с этой функцией
+		InterfaceSelection.Value = DefsFacade.I.Perks.All[0].Id;
 
 		_trash.Retain(_data.Perks.Used.Subscribe((x,y) => OnChanged?.Invoke()));
 		_trash.Retain(InterfaceSelection.Subscribe((x, y) => OnChanged?.Invoke()));

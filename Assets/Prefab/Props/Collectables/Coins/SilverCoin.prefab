@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 7499051716348425550}
   - component: {fileID: 7499051716348425545}
   - component: {fileID: 7499051716348425547}
-  - component: {fileID: -252556036422676068}
   - component: {fileID: 7499051716348425546}
-  - component: {fileID: 8272159940280808338}
-  - component: {fileID: 2559365583700928439}
-  - component: {fileID: 3581512657573533363}
+  - component: {fileID: 7154896655847407469}
+  - component: {fileID: 1429308744484231640}
+  - component: {fileID: 8953732430103347521}
+  - component: {fileID: 5671659811017773794}
+  - component: {fileID: 7123698983379575707}
   m_Layer: 15
-  m_Name: DropSilverCoin
+  m_Name: SilverCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,8 +80,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1885134655
   m_SortingLayer: 1
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 1446069479, guid: 948aa5661bc1b03459bdfa445bdbb897, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 369a4a3d1c3241546a1d90524a9cc959, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,12 +102,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01661408, y: 0.019382954}
+  m_Offset: {x: 0.01661408, y: -0.015795887}
   serializedVersion: 2
-  m_Radius: 0.17523706
+  m_Radius: 0.17328268
 --- !u!114 &7499051716348425547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,27 +121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 7499051716348425556}
---- !u!50 &-252556036422676068
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7499051716348425556}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
 --- !u!114 &7499051716348425546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,10 +137,10 @@ MonoBehaviour:
   _clips:
   - _name: idle
     _sprites:
-    - {fileID: 1446069479, guid: 948aa5661bc1b03459bdfa445bdbb897, type: 3}
-    - {fileID: -62119265, guid: 948aa5661bc1b03459bdfa445bdbb897, type: 3}
-    - {fileID: 112342498, guid: 948aa5661bc1b03459bdfa445bdbb897, type: 3}
-    - {fileID: 1495575231, guid: 948aa5661bc1b03459bdfa445bdbb897, type: 3}
+    - {fileID: 21300000, guid: 369a4a3d1c3241546a1d90524a9cc959, type: 3}
+    - {fileID: 21300000, guid: b803ec29c12b69d45b406dac0fbfcbe2, type: 3}
+    - {fileID: 21300000, guid: 00268622a525de24cabf4c702de246d8, type: 3}
+    - {fileID: 21300000, guid: 7937942272eccd542b7b03e5c7fb09a0, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:
@@ -168,10 +148,9 @@ MonoBehaviour:
         m_Calls: []
   - _name: destroy
     _sprites:
-    - {fileID: 1231259150, guid: 948aa5661bc1b03459bdfa445bdbb897, type: 3}
-    - {fileID: 634313934, guid: 948aa5661bc1b03459bdfa445bdbb897, type: 3}
-    - {fileID: -417273869, guid: 948aa5661bc1b03459bdfa445bdbb897, type: 3}
-    - {fileID: 1445475716, guid: 948aa5661bc1b03459bdfa445bdbb897, type: 3}
+    - {fileID: 21300000, guid: f78793ecab1692e47b0c9bf8860955c9, type: 3}
+    - {fileID: 21300000, guid: 5a3b6c3d71f7cbe428b191fc271e530d, type: 3}
+    - {fileID: 21300000, guid: 8b1d6519bca365344836ad455666b9c1, type: 3}
     _loop: 0
     _allowNextClip: 0
     _onComplete:
@@ -189,7 +168,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &8272159940280808338
+--- !u!114 &7154896655847407469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,37 +177,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7499051716348425556}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9c46877bd56f1045ab9a825f9f622f4, type: 3}
+  m_Script: {fileID: 11500000, guid: c32f15e129a81ec45a22e744274dad85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7499051716348425545}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2559365583700928439}
-        m_TargetAssemblyTypeName: InventoryAddComponent, Assembly-CSharp
-        m_MethodName: Add
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 7499051716348425546}
         m_TargetAssemblyTypeName: Assets.Scripts.SpriteAnimation, Assembly-CSharp
         m_MethodName: SetClip
@@ -241,7 +199,31 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3581512657573533363}
+      - m_Target: {fileID: 7499051716348425545}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5671659811017773794}
+        m_TargetAssemblyTypeName: InventoryAddComponent, Assembly-CSharp
+        m_MethodName: Add
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7123698983379575707}
         m_TargetAssemblyTypeName: PlaySfxSound, Assembly-CSharp
         m_MethodName: Play
         m_Mode: 1
@@ -253,7 +235,43 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2559365583700928439
+--- !u!50 &1429308744484231640
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7499051716348425556}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &8953732430103347521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7499051716348425556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a5f1118559c3c47bfceb52233c75d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _frequency: 6
+  _amplitude: 0.1
+  _randomize: 1
+--- !u!114 &5671659811017773794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -267,7 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: Coin
   _count: 1
---- !u!114 &3581512657573533363
+--- !u!114 &7123698983379575707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -123,7 +123,6 @@ public class InventoryData
 		return count;
 	}
 
-	//???
 	private InventoryItemData GetItem(string id)
 	{
 		foreach (var itemData in _inventory)

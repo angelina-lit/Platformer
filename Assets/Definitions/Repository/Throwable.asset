@@ -15,5 +15,5 @@ MonoBehaviour:
   _collection:
   - _id: Sword
     _projectile: {fileID: 3228310012001004895, guid: 74090815e19d7e149872092abee0c48a, type: 3}
-  - _id: Coin
+  - _id: PearlProjectile
     _projectile: {fileID: 8950574016858117615, guid: ef779e501a6ea114fb37f820db3807d3, type: 3}

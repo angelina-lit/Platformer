@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collection:
   - _id: Coin
-    _icon: {fileID: 1446069479, guid: 948aa5661bc1b03459bdfa445bdbb897, type: 3}
-    _tags: 00000000
+    _icon: {fileID: 21300000, guid: 369a4a3d1c3241546a1d90524a9cc959, type: 3}
+    _tags: 0000000001000000
   - _id: Sword
     _icon: {fileID: 21300000, guid: b3b4269cbc9a2f84bab187eae2233235, type: 3}
     _tags: 000000000100000002000000
@@ -25,15 +25,21 @@ MonoBehaviour:
   - _id: GreenDiamond
     _icon: {fileID: 21300000, guid: e9ad344123256cc46b1d07d322f283c5, type: 3}
     _tags: 0000000001000000
+  - _id: BlueDiamond
+    _icon: {fileID: 21300000, guid: 8b826d7281a1a154292516ddeeff8cfb, type: 3}
+    _tags: 0000000001000000
+  - _id: RedDiamond
+    _icon: {fileID: 21300000, guid: fc7ba36cf31f16c49b508e78382f8c0a, type: 3}
+    _tags: 0000000001000000
   - _id: Key
     _icon: {fileID: 21300000, guid: 120f0776cc6395b4380f0c341cafd06a, type: 3}
     _tags: 0000000001000000
   - _id: SmallHealthPotion
-    _icon: {fileID: -507184521, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
+    _icon: {fileID: 21300000, guid: 286f6561ad3d6e24d82acab3a2d430c1, type: 3}
     _tags: 0100000003000000
   - _id: LargeHealthPotion
-    _icon: {fileID: 1407514351, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
+    _icon: {fileID: 21300000, guid: 68fb004213a77694c8ea73d72c384fa1, type: 3}
     _tags: 0100000003000000
   - _id: SpeedUpPotion
-    _icon: {fileID: 1346213533, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
+    _icon: {fileID: 21300000, guid: 571bdb1b40ce3144f80f25eb8df3de56, type: 3}
     _tags: 010000000300000000000000

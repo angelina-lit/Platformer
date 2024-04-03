@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5091324384854170682}
   - component: {fileID: 7952409126182404881}
   m_Layer: 15
-  m_Name: HealthPotions
+  m_Name: SmallHealthPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -507184521, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 286f6561ad3d6e24d82acab3a2d430c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -157,9 +157,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.017511964, y: -0.098504364}
+  m_Offset: {x: 0.0035001636, y: -0.048460007}
   serializedVersion: 2
-  m_Radius: 0.21565914
+  m_Radius: 0.21966314
 --- !u!114 &5091324384854170685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,13 +176,13 @@ MonoBehaviour:
   _clips:
   - _name: idle
     _sprites:
-    - {fileID: -507184521, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
-    - {fileID: 1939191914, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
-    - {fileID: -418278148, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
-    - {fileID: 2122374798, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
-    - {fileID: 279450838, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
-    - {fileID: 2039598110, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
-    - {fileID: 447592239, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
+    - {fileID: 21300000, guid: 286f6561ad3d6e24d82acab3a2d430c1, type: 3}
+    - {fileID: 21300000, guid: c83a2af420e56d045adbbd763ed56f13, type: 3}
+    - {fileID: 21300000, guid: 50817ecb16414a14aac47e009cc91d6f, type: 3}
+    - {fileID: 21300000, guid: 24e5d8fe1db8e5b4e92aba46c3a6257a, type: 3}
+    - {fileID: 21300000, guid: f6d660a1948d4944c9f1fc8b02e29ec1, type: 3}
+    - {fileID: 21300000, guid: c0130e9f0f9bb254588b5d4c3d942466, type: 3}
+    - {fileID: 21300000, guid: 4e3be0247cb04304499d78f37a79258a, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:
@@ -190,10 +190,10 @@ MonoBehaviour:
         m_Calls: []
   - _name: destroy
     _sprites:
-    - {fileID: -1387337170, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
-    - {fileID: 1871235614, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
-    - {fileID: -1631254888, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
-    - {fileID: -621302635, guid: fa0a03985ced58546a42aa48d8df38af, type: 3}
+    - {fileID: 21300000, guid: 16d1e3c45324772499671a89c51ebf10, type: 3}
+    - {fileID: 21300000, guid: 6056692b0971649409ed45ee60169fd7, type: 3}
+    - {fileID: 21300000, guid: 8d0ccb3299252274fb33e9a9008f9a06, type: 3}
+    - {fileID: 21300000, guid: 7f500812e3f18994b9963715f8791d5d, type: 3}
     _loop: 0
     _allowNextClip: 0
     _onComplete:
@@ -236,5 +236,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737089282c0f15d458771762cce80118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: HealthPotion
+  _id: SmallHealthPotion
   _count: 1
