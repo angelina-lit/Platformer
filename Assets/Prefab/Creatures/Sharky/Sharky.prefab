@@ -975,6 +975,7 @@ MonoBehaviour:
   _alarmDelay: 0.5
   _attackCoolDown: 1
   _missHeroCoolDown: 0.5
+  _horizontalTreshold: 0.5
 --- !u!114 &1709499759
 MonoBehaviour:
   m_ObjectHideFlags: 0
