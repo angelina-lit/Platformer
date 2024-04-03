@@ -48,7 +48,7 @@ public class Creature : MonoBehaviour
 	private void FixedUpdate()
 	{
 
-		var xVelocity = Direction.x * _speed;
+		var xVelocity = CalculateXVelocity();
 		var yVelocity = CalculateYVelocity();
 		Rigidbody.velocity = new Vector2(xVelocity, yVelocity);
 

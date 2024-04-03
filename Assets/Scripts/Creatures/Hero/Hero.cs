@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
+using static Cinemachine.AxisState;
 
 public class Hero : Creature, ICanAddInInventory
 {
@@ -31,6 +32,7 @@ public class Hero : Creature, ICanAddInInventory
 	private GameSession _session;
 	private HealthComponent _health;
 	private float _defaultGravityScale;
+	private float _speedMod;
 
 	private const string SwordId = "Sword";
 	private int CoinsCount => _session.Data.Inventory.Count("Coin");
@@ -53,6 +55,7 @@ public class Hero : Creature, ICanAddInInventory
 		base.Awake();
 
 		_defaultGravityScale = Rigidbody.gravityScale;
+		_speedMod = 1;
 	}
 
 	private void Start()
@@ -100,9 +103,9 @@ public class Hero : Creature, ICanAddInInventory
 		Animator.SetBool(IsOnWall, _isOnWall);
 	}
 
-	protected override float CalculateXVelocity() //????
+	protected override float CalculateXVelocity()
 	{
-		return base.CalculateXVelocity();
+		return base.CalculateXVelocity() * _speedMod;
 	}
 
 	protected override float CalculateYVelocity()
