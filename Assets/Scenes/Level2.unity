@@ -3701,6 +3701,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1666106871}
     m_Modifications:
+    - target: {fileID: 1075891260, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
+      propertyPath: _bound._sentences.Array.data[0]._value
+      value: You need a 20 coin?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1075891260, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
+      propertyPath: _bound._sentences.Array.data[1]._value
+      value: Find them on the top floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 655179015541269593, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
+      propertyPath: _sceneName
+      value: Level3
+      objectReference: {fileID: 0}
     - target: {fileID: 655179015541269596, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3748,6 +3760,14 @@ PrefabInstance:
     - target: {fileID: 655179015541269599, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
       propertyPath: m_Name
       value: WoodDoor(Exit)_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658551739305702529, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
+      propertyPath: _required.Array.data[0].Id
+      value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658551739305702529, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
+      propertyPath: _required.Array.data[0].Value
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}

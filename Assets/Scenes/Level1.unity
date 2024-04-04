@@ -10841,29 +10841,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8955d628913521478b463a55b4c23d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1075891259 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 655179015541269599, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
-  m_PrefabInstance: {fileID: 655179015895929430}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1075891260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075891259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 748dece79f712eb4aa1146e01af8f16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mode: 0
-  _bound:
-    _sentences:
-    - You need a key...
-    - Try to search upper floor.
-  _external: {fileID: 0}
 --- !u!1 &1078335215
 GameObject:
   m_ObjectHideFlags: 0
@@ -18223,34 +18200,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodDoor(Exit)_1
       objectReference: {fileID: 0}
-    - target: {fileID: 8658551739305702529, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
-      propertyPath: _onFail.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8658551739305702529, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
-      propertyPath: _onFail.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8658551739305702529, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
-      propertyPath: _onFail.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1075891260}
-    - target: {fileID: 8658551739305702529, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
-      propertyPath: _onFail.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8658551739305702529, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
-      propertyPath: _onFail.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Show
-      objectReference: {fileID: 0}
-    - target: {fileID: 8658551739305702529, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
-      propertyPath: _onFail.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ShowDialogComponent, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 8658551739305702529, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
-      propertyPath: _onFail.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
 --- !u!1001 &1451302678435192893
@@ -18441,11 +18390,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8522154268067466066, guid: 7e58a3d95f4af0c4e8099b1a1d55f175, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.68
+      value: 30.5
       objectReference: {fileID: 0}
     - target: {fileID: 8522154268067466066, guid: 7e58a3d95f4af0c4e8099b1a1d55f175, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.59
+      value: 15.5
       objectReference: {fileID: 0}
     - target: {fileID: 8522154268067466066, guid: 7e58a3d95f4af0c4e8099b1a1d55f175, type: 3}
       propertyPath: m_LocalPosition.z

@@ -11,6 +11,8 @@ TagManager:
   - Ground
   - Drop
   - SfxAudioSource
+  - SimpleDialog
+  - PersonalizedDialog
   layers:
   - Default
   - TransparentFX

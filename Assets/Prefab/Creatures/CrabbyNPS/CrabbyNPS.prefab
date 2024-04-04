@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1482770007186820381}
   - component: {fileID: 1482770007186820380}
   - component: {fileID: 1482770007186820378}
-  - component: {fileID: 3049916092371681994}
   - component: {fileID: 4879833426394337284}
+  - component: {fileID: 3680468421907595125}
   m_Layer: 10
   m_Name: CrabbyNPS
   m_TagString: Interactable
@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482770007186820452}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.8, y: -0.549, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -151,8 +151,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3049916092371681994}
-        m_TargetAssemblyTypeName: ShowOptionsComponent, Assembly-CSharp
+      - m_Target: {fileID: 4879833426394337284}
+        m_TargetAssemblyTypeName: ShowWindowComponent, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -163,41 +163,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3049916092371681994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482770007186820452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9019f220ffa717b40831e0c158df00d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    DialogText: I can teach you a new perk!
-    Options:
-    - Text: Ok!
-      OnSelect:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 4879833426394337284}
-            m_TargetAssemblyTypeName: ShowWindowComponent, Assembly-CSharp
-            m_MethodName: Show
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-    - Text: Not now.
-      OnSelect:
-        m_PersistentCalls:
-          m_Calls: []
 --- !u!114 &4879833426394337284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +176,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: UI/ManagePerksWindow
+--- !u!114 &3680468421907595125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482770007186820452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748dece79f712eb4aa1146e01af8f16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 0
+  _bound:
+    _sentences:
+    - _value: I can teach you!
+      _icon: {fileID: 21300000, guid: b2dcd0025b6ac1347aafba0f26b76740, type: 3}
+      _side: 1
+    - _value: Good!
+      _icon: {fileID: 21300000, guid: f06db816db9d3e146a7caf4da61f5963, type: 3}
+      _side: 0
+    - _value: Let's go!
+      _icon: {fileID: 21300000, guid: b2dcd0025b6ac1347aafba0f26b76740, type: 3}
+      _side: 1
+    _type: 1
+  _external: {fileID: 0}
 --- !u!1 &1482770007464087734
 GameObject:
   m_ObjectHideFlags: 0
