@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -23,7 +24,7 @@ public class GameSession : MonoBehaviour
 		if (existsSession != null)
 		{
 			existsSession.StartSession(_defaultCheckPoint);
-			Destroy(gameObject); //DestroyImmediate
+			Destroy(gameObject);
 		}
 		else
 		{
@@ -112,5 +113,18 @@ public class GameSession : MonoBehaviour
 	private void OnDestroy()
 	{
 		_trash.Dispose();
+	}
+
+	private readonly List<string> _removeItems = new List<string>();
+
+	public bool RestoreState(string itemId)
+	{
+		return _removeItems.Contains(itemId);
+	}
+
+	public void StoreState(string itemId)
+	{
+		if (!_removeItems.Contains(itemId))
+			_removeItems.Add(itemId);
 	}
 }

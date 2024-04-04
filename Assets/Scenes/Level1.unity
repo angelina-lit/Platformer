@@ -18371,8 +18371,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6763193061981396130, guid: b689edc52b3d90847914e6a0a99b15e9, type: 3}
+      propertyPath: _state
+      value: 
+      objectReference: {fileID: 2916951704027059344}
+    - target: {fileID: 6763193061981396130, guid: b689edc52b3d90847914e6a0a99b15e9, type: 3}
+      propertyPath: _storeState
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b689edc52b3d90847914e6a0a99b15e9, type: 3}
+--- !u!1 &2916951704027059343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1116454048422981110, guid: b689edc52b3d90847914e6a0a99b15e9, type: 3}
+  m_PrefabInstance: {fileID: 2916951704027059342}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2916951704027059344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2916951704027059343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a670fc7aaa4b9a45822c70187d305b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: destructable-barrel1
 --- !u!1001 &4521612794310205285
 PrefabInstance:
   m_ObjectHideFlags: 0

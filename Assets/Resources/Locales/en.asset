@@ -27,4 +27,14 @@ MonoBehaviour:
   - Key: button_back
     Value: "back\r"
   - Key: selected_language
-    Value: Selected language is {0}
+    Value: "Selected language is {0}\r"
+  - Key: Health
+    Value: "Health\r"
+  - Key: Speed
+    Value: "Speed\r"
+  - Key: Range Damage
+    Value: "Range Damage\r"
+  - Key: level-up
+    Value: "Upgrade\r"
+  - Key: some-icon
+    Value: some-icon/resource/1
