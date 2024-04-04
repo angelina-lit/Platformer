@@ -2,34 +2,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Text))]
-public class LocalizeText : MonoBehaviour
+public class LocalizeText : AbstractLocalizeComponent
 {
     [SerializeField] private string _key;
 	[SerializeField] private bool _capitalize;
 
 	private Text _text;
 
-	private void Awake()
+	protected override void Awake()
 	{
 		_text = GetComponent<Text>();
-
-		LocalizationManager.I.OnLocaleChanged += OnLocaleChanged;
-		Localize();
+		base.Awake();
 	}
 
-	private void OnLocaleChanged()
-	{
-		Localize();
-	}
-
-	private void Localize()
+	protected override void Localize()
 	{
 		 var localized = LocalizationManager.I.Localize(_key);
 		_text.text = _capitalize ? localized.ToUpper() : localized;
-	}
-
-	private void OnDestroy()
-	{
-		LocalizationManager.I.OnLocaleChanged -= OnLocaleChanged;
 	}
 }
