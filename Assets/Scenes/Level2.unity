@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 302217052}
   - component: {fileID: 302217054}
   m_Layer: 9
-  m_Name: Level
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1681,22 +1681,6 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 872692442}
     m_ColliderPaths:
-    - - X: 70000104
-        Y: 99999960
-      - X: 70000104
-        Y: 110000040
-      - X: 70000040
-        Y: 110000096
-      - X: -41
-        Y: 110000096
-      - X: -100
-        Y: 110000040
-      - X: -100
-        Y: 99999960
-      - X: -41
-        Y: 99999904
-      - X: 70000040
-        Y: 99999904
     - - X: -39999900
         Y: -41
       - X: -39999900
@@ -1731,10 +1715,6 @@ CompositeCollider2D:
         Y: -100
   m_CompositePaths:
     m_Paths:
-    - - {x: 6.9999743, y: 9.99999}
-      - {x: 6.9999743, y: 11.00001}
-      - {x: -0.00001, y: 10.999974}
-      - {x: 0.0000252, y: 9.99999}
     - - {x: -4.0000253, y: -0.00001}
       - {x: -4.0000253, y: 8.00001}
       - {x: -5.00001, y: 7.9999747}
@@ -1820,8 +1800,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1885134655
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -2344,8 +2324,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1885134655
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -3721,10 +3701,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1666106871}
     m_Modifications:
-    - target: {fileID: 655179015541269593, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
-      propertyPath: _sceneName
-      value: Level3
-      objectReference: {fileID: 0}
     - target: {fileID: 655179015541269596, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3772,10 +3748,6 @@ PrefabInstance:
     - target: {fileID: 655179015541269599, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
       propertyPath: m_Name
       value: WoodDoor(Exit)_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8658551739305702529, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
-      propertyPath: _required.Array.size
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5abcd6164c04d9439e76a2a9a6c7678, type: 3}
@@ -3917,8 +3889,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1885134655
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -9365,10 +9337,6 @@ PrefabInstance:
     - target: {fileID: 2606636648104688851, guid: c92ed08de69e4734ea48b09298de6575, type: 3}
       propertyPath: m_Name
       value: WoodDoor(Enter)_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8946086298385171211, guid: c92ed08de69e4734ea48b09298de6575, type: 3}
-      propertyPath: _id
-      value: level2-checkpoint1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c92ed08de69e4734ea48b09298de6575, type: 3}

@@ -1,8 +1,6 @@
-using System;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
-using static Cinemachine.AxisState;
 
 public class Hero : Creature, ICanAddInInventory
 {
