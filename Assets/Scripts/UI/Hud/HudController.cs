@@ -16,7 +16,7 @@ public class HudController : MonoBehaviour
 
 	private void OnHealthChanged(int newValue, int oldValue)
 	{
-		var maxHealth = DefsFacade.I.Player.MaxHealth;
+		var maxHealth = _session.StatsModel.GetValue(StatId.Hp);
 		var value = (float) newValue / maxHealth;
 		_healthBar.SetProgress(value);
 	}
@@ -24,6 +24,11 @@ public class HudController : MonoBehaviour
 	public void OnSettings()
 	{
 		WindowUtils.CreateWindow("UI/InGameMenuWindow");
+	}
+
+	public void OnDebug()
+	{
+		WindowUtils.CreateWindow("UI/PlayerStatsWindow");
 	}
 
 	private void OnDestroy()

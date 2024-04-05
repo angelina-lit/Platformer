@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -61,9 +62,22 @@ public class Hero : Creature, ICanAddInInventory
 		_session = FindObjectOfType<GameSession>();
 		_health = GetComponent<HealthComponent>();
 		_session.Data.Inventory.OnChanged += OnInventoryChanged;
+		_session.StatsModel.OnUpgraded += OnHeroUpgraded;
 
 		_health.SetHealth(_session.Data.Hp.Value);
 		UpdateHeroWeapon();
+	}
+
+	private void OnHeroUpgraded(StatId statId)
+	{
+		switch (statId)
+		{
+			case StatId.Hp:
+				var health = (int) _session.StatsModel.GetValue(statId);
+				_session.Data.Hp.Value = health;
+				_health.SetHealth(health);
+				break;
+		}
 	}
 
 	private void OnDestroy()
@@ -262,7 +276,8 @@ public class Hero : Creature, ICanAddInInventory
 		if (_speedUpCoolDown.IsReady)
 			_additionalSpeed = 0f;
 
-		return base.CalculateSpeed() + _additionalSpeed;
+		var defaultSpeed = _session.StatsModel.GetValue(StatId.Speed);
+		return defaultSpeed + _additionalSpeed;
 	}
 
 	private bool IsSelectedItem(ItemTag tag)

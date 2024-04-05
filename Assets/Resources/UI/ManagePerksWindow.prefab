@@ -300,8 +300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511f64b7ffab08d4bb692599a62db5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: button_start
-  _capitalize: 1
+  _key: Price
+  _capitalize: 0
 --- !u!1 &546670445018263439
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511f64b7ffab08d4bb692599a62db5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: button_start
+  _key: button_use
   _capitalize: 1
 --- !u!1 &546670445177073761
 GameObject:
@@ -916,7 +916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511f64b7ffab08d4bb692599a62db5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: button_start
+  _key: button_use
   _capitalize: 1
 --- !u!1 &546670445624149451
 GameObject:
@@ -1437,7 +1437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511f64b7ffab08d4bb692599a62db5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: button_start
+  _key: button_buy
   _capitalize: 1
 --- !u!1 &546670445840709212
 GameObject:
@@ -1532,8 +1532,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511f64b7ffab08d4bb692599a62db5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: button_start
-  _capitalize: 1
+  _key: 
+  _capitalize: 0
 --- !u!1 &546670445916829867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,7 +1705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511f64b7ffab08d4bb692599a62db5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: button_start
+  _key: button_buy
   _capitalize: 1
 --- !u!1 &546670446071325581
 GameObject:
@@ -1963,8 +1963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511f64b7ffab08d4bb692599a62db5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: button_start
-  _capitalize: 1
+  _key: perks_info
+  _capitalize: 0
 --- !u!1 &546670446381118330
 GameObject:
   m_ObjectHideFlags: 0

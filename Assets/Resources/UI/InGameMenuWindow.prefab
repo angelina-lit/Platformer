@@ -913,7 +913,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511f64b7ffab08d4bb692599a62db5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: button_start
+  _key: button_restart
   _capitalize: 1
 --- !u!1 &7817213429094571811
 GameObject:
@@ -1489,7 +1489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511f64b7ffab08d4bb692599a62db5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: button_start
+  _key: button_restart
   _capitalize: 1
 --- !u!1 &7817213429990351760
 GameObject:
@@ -1584,5 +1584,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511f64b7ffab08d4bb692599a62db5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _key: menu_title
+  _key: menu_pause
   _capitalize: 0

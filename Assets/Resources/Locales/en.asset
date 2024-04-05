@@ -27,14 +27,34 @@ MonoBehaviour:
   - Key: button_back
     Value: "back\r"
   - Key: selected_language
-    Value: "Selected language is {0}\r"
+    Value: "Language selection:\r"
   - Key: Health
     Value: "Health\r"
   - Key: Speed
     Value: "Speed\r"
-  - Key: Range Damage
+  - Key: Range_Damage
     Value: "Range Damage\r"
   - Key: level-up
     Value: "Upgrade\r"
   - Key: some-icon
-    Value: some-icon/resource/1
+    Value: "some-icon/resource/1\r"
+  - Key: Price
+    Value: "Price:\r"
+  - Key: menu_pause
+    Value: "Pause\r"
+  - Key: button_restart
+    Value: "Restart\r"
+  - Key: perks_info
+    Value: "This is awesome perk! Usage: Push the limits.  And you're cool!\r"
+  - Key: button_buy
+    Value: "buy\r"
+  - Key: button_use
+    Value: "use\r"
+  - Key: Options
+    Value: "Options\r"
+  - Key: button_ok
+    Value: "ok\r"
+  - Key: Music
+    Value: "Music:\r"
+  - Key: SFX
+    Value: 'SFX:'

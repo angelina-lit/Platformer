@@ -287,8 +287,12 @@ PrefabInstance:
       value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 4138766139698602201, guid: 0eb2bdd691b65c8428f99b7ef2c4f3de, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138766139698602201, guid: 0eb2bdd691b65c8428f99b7ef2c4f3de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.5
+      value: 26.5
       objectReference: {fileID: 0}
     - target: {fileID: 4138766139698602201, guid: 0eb2bdd691b65c8428f99b7ef2c4f3de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10795,20 +10799,20 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
-      - Id: GreenDiamond
-        Value: 30
+      - Id: Coin
+        Value: 1000
       - Id: SmallHealthPotion
         Value: 1
       - Id: SpeedUpPotion
         Value: 20
-      - Id: Sword
-        Value: 1
     Hp:
       _value: 10
     Perks:
       _used:
         _value: 
       _unlocked: []
+    Levels:
+      _progress: []
   _defaultCheckPoint: level1-checkpoint1
 --- !u!4 &1065936747
 Transform:
@@ -16982,6 +16986,10 @@ PrefabInstance:
     - target: {fileID: 4138766139698602201, guid: 0eb2bdd691b65c8428f99b7ef2c4f3de, type: 3}
       propertyPath: m_RootOrder
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138766139698602201, guid: 0eb2bdd691b65c8428f99b7ef2c4f3de, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4138766139698602201, guid: 0eb2bdd691b65c8428f99b7ef2c4f3de, type: 3}
       propertyPath: m_LocalPosition.x

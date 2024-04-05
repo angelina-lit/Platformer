@@ -1688,4 +1688,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _key: menu_title
-  _capitalize: 0
+  _capitalize: 1

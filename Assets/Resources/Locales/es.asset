@@ -27,4 +27,35 @@ MonoBehaviour:
   - Key: button_back
     Value: "atr\xE1s\r"
   - Key: selected_language
-    Value: idioma seleccionado {0}
+    Value: "Selecci\xF3n de idioma:\r"
+  - Key: Health
+    Value: "Salud\r"
+  - Key: Speed
+    Value: "Velocidad\r"
+  - Key: Range_Damage
+    Value: "Da\xF1o de alcance\r"
+  - Key: level-up
+    Value: "Mejora\r"
+  - Key: some-icon
+    Value: "some-icon/resource/1\r"
+  - Key: Price
+    Value: "Precio:\r"
+  - Key: menu_pause
+    Value: "Pausa\r"
+  - Key: button_restart
+    Value: "Reanudar\r"
+  - Key: perks_info
+    Value: "\xA1Este es un beneficio incre\xEDble!\r Uso: Supera los l\xEDmites.\r
+      \r \xA1Y eres genial!\r"
+  - Key: button_buy
+    Value: "comprar\r"
+  - Key: button_use
+    Value: "usar\r"
+  - Key: Options
+    Value: "Opciones\r"
+  - Key: button_ok
+    Value: "ok\r"
+  - Key: Music
+    Value: "M\xFAsica:\r"
+  - Key: SFX
+    Value: 'Efectos de sonido:'

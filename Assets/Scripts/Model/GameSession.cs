@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -15,6 +14,7 @@ public class GameSession : MonoBehaviour
 	private readonly CompositeDisposable _trash = new CompositeDisposable();
 	public QuickInventoryModel QuickInventory { get; private set; }
 	public PerksModel PerksModel { get; private set; }
+	public StatsModel StatsModel { get; private set; }
 
 	private readonly List<string> _checkPoints = new List<string>();
 
@@ -65,6 +65,11 @@ public class GameSession : MonoBehaviour
 
 		PerksModel = new PerksModel(_data);
 		_trash.Retain(PerksModel);
+
+		StatsModel = new StatsModel(_data);
+		_trash.Retain(StatsModel);
+
+		_data.Hp.Value = (int) StatsModel.GetValue(StatId.Hp);
 	}
 
 	private void LoadHud()
