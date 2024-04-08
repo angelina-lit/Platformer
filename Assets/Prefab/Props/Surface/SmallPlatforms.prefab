@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4138766139698602183}
   - component: {fileID: 4138766139698602200}
   m_Layer: 9
-  m_Name: Platforms
+  m_Name: SmallPlatforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +26,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4138766139698602202}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 1.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -1684537071
   m_SortingLayer: 3
   m_SortingOrder: 2
-  m_Sprite: {fileID: -1319829918, guid: e10a0fecc4ae81440b204ad7f867c503, type: 3}
+  m_Sprite: {fileID: -1319829918, guid: 5ed23ad0b0c1c234780861f15a08e274, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,8 +102,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0.13}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -2, y: 0}
-  - {x: 2, y: 0}
+  - {x: -0.47111353, y: -0.0044617653}
+  - {x: 0.4729486, y: -0.003713131}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
