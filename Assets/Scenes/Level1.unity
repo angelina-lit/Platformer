@@ -10801,8 +10801,6 @@ MonoBehaviour:
       _inventory:
       - Id: Coin
         Value: 1000
-      - Id: SmallHealthPotion
-        Value: 1
       - Id: SpeedUpPotion
         Value: 20
     Hp:
